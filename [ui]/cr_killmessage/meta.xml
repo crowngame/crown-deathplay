@@ -1,0 +1,102 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="client/main.lua" type="client" cache="false" />
+    <script src="client/killmessage/killmessage_1.lua" type="client" cache="false" />
+    <script src="client/killmessage/killmessage_2.lua" type="client" cache="false" />
+	
+    <script src="server/server.lua" type="server" />
+	
+	<file src="public/images/weapons/0.png" />
+    <file src="public/images/weapons/1.png" />
+    <file src="public/images/weapons/2.png" />
+    <file src="public/images/weapons/3.png" />
+    <file src="public/images/weapons/4.png" />
+    <file src="public/images/weapons/5.png" />
+    <file src="public/images/weapons/6.png" />
+    <file src="public/images/weapons/7.png" />
+    <file src="public/images/weapons/8.png" />
+    <file src="public/images/weapons/9.png" />
+    <file src="public/images/weapons/10.png" />
+    <file src="public/images/weapons/11.png" />
+    <file src="public/images/weapons/12.png" />
+    <file src="public/images/weapons/14.png" />
+    <file src="public/images/weapons/15.png" />
+    <file src="public/images/weapons/16.png" />
+    <file src="public/images/weapons/17.png" />
+    <file src="public/images/weapons/18.png" />
+    <file src="public/images/weapons/22.png" />
+    <file src="public/images/weapons/23.png" />
+    <file src="public/images/weapons/24.png" />
+    <file src="public/images/weapons/25.png" />
+    <file src="public/images/weapons/26.png" />
+    <file src="public/images/weapons/27.png" />
+    <file src="public/images/weapons/28.png" />
+    <file src="public/images/weapons/29.png" />
+    <file src="public/images/weapons/30.png" />
+    <file src="public/images/weapons/31.png" />
+    <file src="public/images/weapons/32.png" />
+    <file src="public/images/weapons/33.png" />
+    <file src="public/images/weapons/34.png" />
+    <file src="public/images/weapons/35.png" />
+    <file src="public/images/weapons/36.png" />
+    <file src="public/images/weapons/37.png" />
+    <file src="public/images/weapons/38.png" />
+    <file src="public/images/weapons/39.png" />
+    <file src="public/images/weapons/40.png" />
+    <file src="public/images/weapons/41.png" />
+    <file src="public/images/weapons/42.png" />
+    <file src="public/images/weapons/43.png" />
+    <file src="public/images/weapons/44.png" />
+    <file src="public/images/weapons/45.png" />
+    <file src="public/images/weapons/46.png" />
+	
+	<file src="public/images/icons/weapons/9mm.png" />
+    <file src="public/images/icons/weapons/ak47.png" />
+    <file src="public/images/icons/weapons/baseballBat.png" />
+    <file src="public/images/icons/weapons/brassKnuckles.png" />
+    <file src="public/images/icons/weapons/cane.png" />
+    <file src="public/images/icons/weapons/chainsaw.png" />
+    <file src="public/images/icons/weapons/combatShotgun.png" />
+    <file src="public/images/icons/weapons/countryRifle.png" />
+    <file src="public/images/icons/weapons/desertEagle.png" />
+    <file src="public/images/icons/weapons/detonator.png" />
+    <file src="public/images/icons/weapons/dildo.png" />
+    <file src="public/images/icons/weapons/fireExtinguisher.png" />
+    <file src="public/images/icons/weapons/fist.png" />
+    <file src="public/images/icons/weapons/flamethrower.png" />
+    <file src="public/images/icons/weapons/flowers.png" />
+    <file src="public/images/icons/weapons/goggles.png" />
+    <file src="public/images/icons/weapons/golfClub.png" />
+    <file src="public/images/icons/weapons/grenade.png" />
+    <file src="public/images/icons/weapons/hsRocketLauncher.png" />
+    <file src="public/images/icons/weapons/katana.png" />
+    <file src="public/images/icons/weapons/knife.png" />
+    <file src="public/images/icons/weapons/m4.png" />
+    <file src="public/images/icons/weapons/microSmg.png" />
+    <file src="public/images/icons/weapons/minigun.png" />
+    <file src="public/images/icons/weapons/molotovCocktail.png" />
+    <file src="public/images/icons/weapons/mp5.png" />
+    <file src="public/images/icons/weapons/nightstick.png" />
+    <file src="public/images/icons/weapons/parachute.png" />
+    <file src="public/images/icons/weapons/poolCue.png" />
+    <file src="public/images/icons/weapons/rocketLauncher.png" />
+    <file src="public/images/icons/weapons/satchelCharge.png" />
+    <file src="public/images/icons/weapons/sawnoffShotgun.png" />
+    <file src="public/images/icons/weapons/shotgun.png" />
+    <file src="public/images/icons/weapons/shovel.png" />
+    <file src="public/images/icons/weapons/silenced9mm.png" />
+    <file src="public/images/icons/weapons/sniperRifle.png" />
+    <file src="public/images/icons/weapons/spraycan.png" />
+    <file src="public/images/icons/weapons/tearGas.png" />
+    <file src="public/images/icons/weapons/tec9.png" />
+    <file src="public/images/icons/deathReasons/death.png" />
+    <file src="public/images/icons/deathReasons/explosion.png" />
+    <file src="public/images/icons/deathReasons/fall.png" />
+    <file src="public/images/icons/deathReasons/fire.png" />
+    <file src="public/images/icons/deathReasons/helicopterBlades.png" />
+    <file src="public/images/icons/deathReasons/rammed.png" />
+    
+	<min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

@@ -1,0 +1,51 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="client.lua" type="client" cache="false" />
+    <script src="server.lua" type="server" />
+    <script src="shared.lua" type="shared" cache="false" />
+    
+    <export function="getPlayerRankTitle" type="client" />
+    <export function="getPlayerRankTitle" type="server" />
+    <export function="getRankTitle" type="client" />
+    <export function="getRankTitle" type="server" />
+    <export function="getRankAim" type="client" />
+    <export function="getRankAim" type="server" />
+    <export function="getPlayerRankIndex" type="client" />
+    <export function="getPlayerRankIndex" type="server" />
+    <export function="checkPlayerRank" type="server" />
+    
+    <file src="public/images/1.png" />
+    <file src="public/images/2.png" />
+    <file src="public/images/3.png" />
+    <file src="public/images/4.png" />
+    <file src="public/images/5.png" />
+    <file src="public/images/6.png" />
+    <file src="public/images/7.png" />
+    <file src="public/images/8.png" />
+    <file src="public/images/9.png" />
+    <file src="public/images/10.png" />
+    <file src="public/images/11.png" />
+    <file src="public/images/12.png" />
+    <file src="public/images/13.png" />
+    <file src="public/images/14.png" />
+    <file src="public/images/15.png" />
+    <file src="public/images/16.png" />
+    <file src="public/images/17.png" />
+    <file src="public/images/18.png" />
+    <file src="public/images/19.png" />
+    <file src="public/images/20.png" />
+    <file src="public/images/21.png" />
+    <file src="public/images/22.png" />
+    <file src="public/images/23.png" />
+    <file src="public/images/24.png" />
+    <file src="public/images/25.png" />
+    <file src="public/images/26.png" />
+    <file src="public/images/27.png" />
+    <file src="public/images/28.png" />
+    <file src="public/images/29.png" />
+    
+    <file src="public/sounds/rank_up.mp3" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

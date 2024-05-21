@@ -1,0 +1,101 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="shared.lua" type="shared" cache="false" />
+    
+    <export function="isPlayerServerOwner" type="server" />
+    <export function="isPlayerServerOwner" type="client" />
+    
+    <export function="isPlayerDeveloper" type="server" />
+    <export function="isPlayerDeveloper" type="client" />
+    
+    <export function="isPlayerServerManager" type="server" />
+    <export function="isPlayerServerManager" type="client" />
+    
+    <export function="isPlayerGeneralAdmin" type="server" />
+    <export function="isPlayerGeneralAdmin" type="client" />
+    
+    <export function="isPlayerLeaderAdmin" type="server" />
+    <export function="isPlayerLeaderAdmin" type="client" />
+    
+    <export function="isPlayerSeniorAdmin" type="server" />
+    <export function="isPlayerSeniorAdmin" type="client" />
+    
+    <export function="isPlayerAdmin3" type="server" />
+    <export function="isPlayerAdmin3" type="client" />
+    
+    <export function="isPlayerAdmin2" type="server" />
+    <export function="isPlayerAdmin2" type="client" />
+    
+    <export function="isPlayerAdmin1" type="server" />
+    <export function="isPlayerAdmin1" type="client" />
+    
+    <export function="isPlayerTrialAdmin" type="server" />
+    <export function="isPlayerTrialAdmin" type="client" />
+    
+    <export function="isPlayerSupporter" type="server" />
+    <export function="isPlayerSupporter" type="client" />
+    
+    <export function="isPlayerSupporterManager" type="server" />
+    <export function="isPlayerSupporterManager" type="client" />
+    
+    <export function="isPlayerTester" type="server" />
+    <export function="isPlayerTester" type="client" />
+    
+    <export function="isPlayerScripter" type="server" />
+    <export function="isPlayerScripter" type="client" />
+    
+    <export function="isPlayerLeadScripter" type="server" />
+    <export function="isPlayerLeadScripter" type="client" />
+    
+    <export function="isPlayerVCTMember" type="server" />
+    <export function="isPlayerVCTMember" type="client" />
+    
+    <export function="isPlayerVehicleConsultant" type="server" />
+    <export function="isPlayerVehicleConsultant" type="client" />
+    
+    <export function="isPlayerMappingTeamMember" type="server" />
+    <export function="isPlayerMappingTeamMember" type="client" />
+    
+    <export function="isPlayerMappingTeamLeader" type="server" />
+    <export function="isPlayerMappingTeamLeader" type="client" />
+    
+    <export function="isPlayerStaff" type="server" />
+    <export function="isPlayerStaff" type="client" />
+    
+	<export function="isPlayerIA" type="server" />
+    <export function="isPlayerIA" type="client" />
+	
+	<export function="isPlayerManager" type="server" />
+    <export function="isPlayerManager" type="client" />
+	
+    <export function="getAdminGroups" type="server" />
+    <export function="getAdminGroups" type="client" />
+    
+    <export function="getAdminTitles" type="server" />
+    <export function="getAdminTitles" type="client" />
+	
+    <export function="getAdminTitle" type="server" />
+    <export function="getAdminTitle" type="client" />
+    
+    <export function="getHelperNumber" type="server" />
+    <export function="getHelperNumber" type="client" />
+    
+    <export function="getAuxiliaryStaffNumbers" type="server" />
+    <export function="getAuxiliaryStaffNumbers" type="client" />
+    
+    <export function="getAdminStaffNumbers" type="server" />
+    <export function="getAdminStaffNumbers" type="client" />
+    
+    <export function="getAdminLevelTitle" type="server" />
+    <export function="getAdminLevelTitle" type="client" />
+	
+	<export function="getStaffTitle" type="server" />
+    <export function="getStaffTitle" type="client" />
+    
+    <export function="getStaffTitles" type="server" />
+    <export function="getStaffTitles" type="client" />
+	
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

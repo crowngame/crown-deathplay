@@ -1,0 +1,34 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="client.lua" type="client" cache="false" />
+    <script src="server.lua" type="server" />
+    
+    <file src="fonts/sf-regular.ttf" type="client" />
+    
+    <file src="images/drum.png" type="client" />
+    <file src="images/cards.png" type="client" />
+    
+    <file src="cards/bell.png" type="client" />
+    <file src="cards/cherry.png" type="client" />
+    <file src="cards/diamond.png" type="client" />
+    <file src="cards/emerald.png" type="client" />
+    <file src="cards/goldbar.png" type="client" />
+    <file src="cards/goldclover.png" type="client" />
+    <file src="cards/goldenseven.png" type="client" />
+    <file src="cards/grape.png" type="client" />
+    <file src="cards/greenbar.png" type="client" />
+    <file src="cards/greenclover.png" type="client" />
+    <file src="cards/heart.png" type="client" />
+    <file src="cards/horseshoe.png" type="client" />
+    <file src="cards/lemon.png" type="client" />
+    <file src="cards/plum.png" type="client" />
+    <file src="cards/redbar.png" type="client" />
+    <file src="cards/redseven.png" type="client" />
+    <file src="cards/ruby.png" type="client" />
+    <file src="cards/watermelon.png" type="client" />
+    
+    <file src="sounds/jackpot.ogg" type="client" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

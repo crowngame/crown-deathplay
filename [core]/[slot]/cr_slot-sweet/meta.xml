@@ -1,0 +1,82 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="shared.lua" type="shared" cache="false" />
+    <script src="ui/gui.lua" type="client" cache="false" />
+    <script src="ui/sounds.lua" type="client" cache="false" />
+    <script src="client.lua" type="client" cache="false" />
+    <script src="senario.lua" type="server" />
+    
+    <!-- assets -->
+    <file src="assets/x.png" />
+    
+    <file src="assets/candys/apple.png" />
+    <file src="assets/candys/banana.png" />
+    <file src="assets/candys/blue.png" />
+    <file src="assets/candys/candy.png" />
+    <file src="assets/candys/grape.png" />
+    <file src="assets/candys/green.png" />
+    <file src="assets/candys/heart.png" />
+    <file src="assets/candys/plum.png" />
+    <file src="assets/candys/purple.png" />
+    <file src="assets/candys/watermelon.png" />
+    <file src="assets/multipliers/explode.png" />
+    <file src="assets/multipliers/high.png" />
+    <file src="assets/multipliers/low.png" />
+    <file src="assets/multipliers/medium.png" />
+    <file src="assets/screen/background.png" />
+    <file src="assets/screen/slot-bg.png" />
+    <file src="assets/screen/slot-border.png" />
+    <file src="assets/screen/title.png" />
+    <file src="assets/screen/volume.png" />
+    <file src="assets/screen/settings.png" />
+    <file src="assets/screen/info.png" />
+    <file src="assets/screen/farmbutton.png" />
+    <file src="assets/screen/farmbuttonarrow.png" />
+    <file src="assets/screen/addbet.png" />
+    <file src="assets/screen/removebet.png" />
+    <file src="assets/screen/freespinbutton.png" />
+    <file src="assets/screen/freespinbuttonhover.png" />
+    <file src="assets/screen/bordercake.png" />
+    <file src="assets/screen/winscreen.png" />
+    <file src="assets/screen/wintype.png" />
+    <file src="assets/screen/spinwin.png" />
+    
+    <!-- sounds -->
+    <file src="assets/sounds/background-music.oga" />
+    <file src="assets/sounds/candy-hit.oga" />
+    <file src="assets/sounds/click.oga" />
+    <file src="assets/sounds/farm-sweets.oga" />
+    <file src="assets/sounds/free-spin-bg.oga" />
+    <file src="assets/sounds/free-spin-end-bg.oga" />
+    <file src="assets/sounds/free-spin-end.oga" />
+    <file src="assets/sounds/free-spin-start.oga" />
+    <file src="assets/sounds/multipliers-boom.oga" />
+    <file src="assets/sounds/sensational.mp3" />
+    <file src="assets/sounds/sweet-hit.oga" />
+    
+    <file src="assets/sounds/1.mp3" />
+    <file src="assets/sounds/2.mp3" />
+    <file src="assets/sounds/3.mp3" />
+    <file src="assets/sounds/4.mp3" />
+    <file src="assets/sounds/5.mp3" />
+    <file src="assets/sounds/6.mp3" />
+    <file src="assets/sounds/7.mp3" />
+    
+    <!-- explode -->
+    <file src="assets/explode/1.png" />
+    <file src="assets/explode/2.png" />
+    <file src="assets/explode/3.png" />
+    <file src="assets/explode/4.png" />
+    <file src="assets/explode/5.png" />
+    <file src="assets/explode/6.png" />
+    <file src="assets/explode/7.png" />
+    <file src="assets/explode/8.png" />
+    <file src="assets/explode/9.png" />
+    
+    <!-- fonts -->
+    <file src="assets/fonts/font_bottom.ttf" />
+    <file src="assets/fonts/font_top.ttf" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

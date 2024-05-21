@@ -1,0 +1,14 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <info author="mabako" description="some fancy shmancy world editor perhaps. not really." />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728" />
+    
+    <script src="client/editor.lua" type="client" />
+    
+    <script src="client/keys.lua" type="client" />
+    <script src="client/lines.lua" type="client" />
+    
+    <script src="shared/functions.lua" type="client" />
+</meta>

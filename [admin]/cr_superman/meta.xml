@@ -1,0 +1,10 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <info author="Alberto Alonso (ryden)" version="1.0" type="script" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+    <script src="s_superman.lua" type="server" />
+    <script src="c_superman.lua" type="client" />
+    <oop>true</oop>
+</meta>

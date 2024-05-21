@@ -1,0 +1,112 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+	<file src="public/dede/assets/background.png" />
+	<file src="public/dede/assets/card.png" />
+	<file src="public/dede/assets/character.png" />
+	<file src="public/dede/assets/effects/slot/1.png" />
+	<file src="public/dede/assets/effects/slot/2.png" />
+	<file src="public/dede/assets/effects/slot/3.png" />
+	<file src="public/dede/assets/effects/slot/4.png" />
+	<file src="public/dede/assets/effects/slot/5.png" />
+	<file src="public/dede/assets/effects/slot/6.png" />
+	<file src="public/dede/assets/effects/slot/7.png" />
+	<file src="public/dede/assets/effects/slot/8.png" />
+	<file src="public/dede/assets/effects/fire/1.png" />
+	<file src="public/dede/assets/effects/fire/2.png" />
+	<file src="public/dede/assets/effects/fire/3.png" />
+	<file src="public/dede/assets/effects/fire/4.png" />
+	<file src="public/dede/assets/effects/fire/5.png" />
+	<file src="public/dede/assets/effects/fire/6.png" />
+	<file src="public/dede/assets/effects/fire/7.png" />
+	<file src="public/dede/assets/effects/fire/8.png" />
+	<file src="public/dede/assets/effects/fire/9.png" />
+	<file src="public/dede/assets/effects/fire/10.png" />
+	<file src="public/dede/assets/effects/fire/11.png" />
+	<file src="public/dede/assets/effects/fire/12.png" />
+	<file src="public/dede/assets/frames/bet-switch-button.png" />
+	<file src="public/dede/assets/frames/bet-switch.png" />
+	<file src="public/dede/assets/frames/bet.png" />
+	<file src="public/dede/assets/frames/slot-frame.png" />
+	<file src="public/dede/assets/frames/slot.png" />
+	<file src="public/dede/assets/frames/win-card.png" />
+	<file src="public/dede/assets/logo.png" />
+	<file src="public/dede/assets/modal/amount.png" />
+	<file src="public/dede/assets/modal/background.png" />
+	<file src="public/dede/assets/modal/no.png" />
+	<file src="public/dede/assets/modal/win-screen.png" />
+	<file src="public/dede/assets/modal/yes.png" />
+	<file src="public/dede/assets/multiplier.png" />
+	<file src="public/dede/assets/multipliers/angel.png" />
+	<file src="public/dede/assets/multipliers/extreme.png" />
+	<file src="public/dede/assets/multipliers/hard.png" />
+	<file src="public/dede/assets/multipliers/low.png" />
+	<file src="public/dede/assets/multipliers/medium.png" />
+	<file src="public/dede/assets/multipliers/mega.png" />
+	<file src="public/dede/assets/multipliers/nice.png" />
+	<file src="public/dede/assets/multipliers/sensational.png" />
+	<file src="public/dede/assets/multipliers/superb.png" />
+	<file src="public/dede/assets/symbols/blue.png" />
+	<file src="public/dede/assets/symbols/coupe.png" />
+	<file src="public/dede/assets/symbols/crown.png" />
+	<file src="public/dede/assets/symbols/green.png" />
+	<file src="public/dede/assets/symbols/purple.png" />
+	<file src="public/dede/assets/symbols/red.png" />
+	<file src="public/dede/assets/symbols/ring.png" />
+	<file src="public/dede/assets/symbols/scatter.png" />
+	<file src="public/dede/assets/symbols/time.png" />
+	<file src="public/dede/assets/symbols/yellow.png" />
+	<file src="public/dede/assets/win-card-bg.png" />
+	<file src="public/dede/sounds/background-hot.mp3" />
+	<file src="public/dede/sounds/background-ingame.mp3" />
+	<file src="public/dede/sounds/blast-1.mp3" />
+	<file src="public/dede/sounds/click.mp3" />
+	<file src="public/dede/sounds/free-spin-end.mp3" />
+	<file src="public/dede/sounds/free-spin-win.mp3" />
+	<file src="public/dede/sounds/hit-2.mp3" />
+	<file src="public/dede/sounds/hit-3.mp3" />
+	<file src="public/dede/sounds/hit-4.mp3" />
+	<file src="public/dede/sounds/hit-end-3.mp3" />
+	<file src="public/dede/sounds/mega-sound.mp3" />
+	<file src="public/dede/sounds/mega-voice.mp3" />
+	<file src="public/dede/sounds/multiplier-come.mp3" />
+	<file src="public/dede/sounds/multiplier-effect.mp3" />
+	<file src="public/dede/sounds/multiplier-hard-sound.mp3" />
+	<file src="public/dede/sounds/multiplier-low-sound.mp3" />
+	<file src="public/dede/sounds/multiplier-medium-sound.mp3" />
+	<file src="public/dede/sounds/multiplier-merge.mp3" />
+	<file src="public/dede/sounds/nice-voice.mp3" />
+	<file src="public/dede/sounds/nice.mp3" />
+	<file src="public/dede/sounds/scatter-sound.mp3" />
+	<file src="public/dede/sounds/sensational-voice.mp3" />
+	<file src="public/dede/sounds/sensational.mp3" />
+	<file src="public/dede/sounds/super-sound.mp3" />
+	<file src="public/dede/sounds/win-end-1.mp3" />
+	<file src="public/dede/sounds/win-sound.mp3" />
+	<file src="public/ok.png" />
+	<file src="public/plus.png" />
+	<file src="public/minus.png" />
+	<file src="public/x.png" />
+	<file src="public/volume.png" />
+	<file src="public/mute.png" />
+	<file src="public/flash.png" />
+    <file src="public/font1.ttf" />
+    <file src="public/font2.otf" />
+	<file src="public/font3.ttf" />
+	<file src="public/sounds/win-1.mp3" />
+	<file src="public/sounds/win-2.mp3" />
+	<file src="public/sounds/win-3.mp3" />
+	<file src="public/sounds/win-4.mp3" />
+	<file src="public/sounds/win-5.mp3" />
+	<file src="public/sounds/win-6.mp3" />
+
+    <file src="font.ttf" />
+	<file src="fontbold.ttf" />
+    <!-- code -->
+	<script src="config.lua" type="shared" cache="false" />
+    <script src="c_slot.luac" type="client" cache="false" />
+	<script src="s_slot.luac" type="server" cache="false" />
+
+    <min_mta_version client="1.5.6-9.18728" server="1.5.6-9.18728" />
+</meta>

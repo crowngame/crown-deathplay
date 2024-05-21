@@ -1,0 +1,15 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <info author="OWL Scripting Team" type="script" description="Vehicle License Plate System" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+    
+    <script src="s_plate_system.lua" type="server" />
+    <script src="c_plate_system.lua" type="client" />
+    
+    <script src="g_plate_system.lua" type="client" />
+    <script src="g_plate_system.lua" type="server" />
+    <export function="checkPlate" type="server" />
+    <export function="checkPlate" type="client" />
+</meta>

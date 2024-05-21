@@ -1,0 +1,19 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <info type="script" author="iG Roleplay" version="1.0" />
+    
+    <file src="files/coronastar.jpg" />
+    <file src="shaders/replacement.fx" />
+    
+    <script src="frames_client.lua" type="client" protected="true" />
+    <script src="frames_gui.lua" type="client" protected="true" />
+    <script src="frames_server.lua" type="server" />
+    
+    <script src="s_stream.lua" type="server" />
+    <script src="c_stream.lua" type="client" />
+    <export function="newTexture" type="server" />
+    
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>

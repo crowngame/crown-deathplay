@@ -1,0 +1,13 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <info author="Exciter" type="script" description="Roadblock System" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+    
+    <script src="g_roadblocks.lua" type="server" />
+    <script src="g_roadblocks.lua" type="client" />
+    
+    <script src="c_roadblocks.lua" type="client" />
+    <script src="s_roadblocks.lua" type="server" />
+</meta>
