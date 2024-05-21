@@ -1,4 +1,4 @@
-local sizeX, sizeY = 800, 450
+local sizeX, sizeY = 820, 450
 local screenX, screenY = (screenSize.x - sizeX) / 2, (screenSize.y - sizeY) / 2
 local clickTick = 0
 
@@ -78,21 +78,30 @@ addCommandHandler("crownpass", function()
 						selectedPage = 2
 					end
 					
+					local scrollbarX = screenX + sizeX - 30
+					local scrollbarY = screenY + 120
+					local scrollbarWidth = 10
+					local scrollbarHeight = sizeY - 140
+					local scrollHeight = scrollbarHeight * (maxScroll / ((selectedPage == 1 and 50) or (#passMissions)))
+					
+					dxDrawRectangle(scrollbarX, scrollbarY, scrollbarWidth, scrollbarHeight, tocolor(40, 40, 40, 255))
+					dxDrawRectangle(scrollbarX, scrollbarY + ((scroll / ((selectedPage == 1 and 50) or (#passMissions))) * scrollbarHeight), scrollbarWidth, scrollHeight, tocolor(100, 100, 100, 255))
+					
 					if selectedPage == 1 then
-						local isPassInfoWritten = false
+						local passInfoWritten = false
 						local marginX = 0
 						local scrollIndex = 0
 						
 						for index, value in ipairs(passRewards[1]) do
 							if index > scroll and scrollIndex < maxScroll then
-								if not isPassInfoWritten and index == 1 then
+								if not passInfoWritten and index == 1 then
 									dxDrawRectangle(screenX + 20, screenY + 120, 100, 150, tocolor(32, 32, 32, 255))
 									dxDrawText("", screenX + 42, screenY + 160, 0, 0, tocolor(189, 189, 189), 1, icons.iconPass)
 									dxDrawText("FREE", screenX + 140, screenY + 205, screenX, 0, tocolor(189, 189, 189), 1, fonts.BebasNeueBold.h3, "center")
 									
 									scrollIndex = scrollIndex + 1
 									marginX = marginX + 110
-									isPassInfoWritten = true
+									passInfoWritten = true
 								end
 								
 								dxDrawRectangle(screenX + 20 + marginX, screenY + 120, 100, 150, exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 120, 100, 150) and tocolor(40, 40, 40, 255) or tocolor(32, 32, 32, 255))
@@ -133,13 +142,13 @@ addCommandHandler("crownpass", function()
 							end
 						end
 						
-						isPassInfoWritten = false
+						passInfoWritten = false
 						marginX = 0
 						scrollIndex = 0
 						
 						for index, value in ipairs(passRewards[2]) do
 							if index > scroll and scrollIndex < maxScroll then
-								if not isPassInfoWritten and index == 1 then
+								if not passInfoWritten and index == 1 then
 									dxDrawRectangle(screenX + 20, screenY + 280, 100, 150, tocolor(32, 32, 32, 255))
 									dxDrawText("", screenX + 42, screenY + 320, 0, 0, tocolor(eliteR, eliteG, eliteB, 200), 1, icons.iconPass)
 									dxDrawText("ELITE", screenX + 140, screenY + 365, screenX, 0, tocolor(eliteR, eliteG, eliteB, 200), 1, fonts.BebasNeueBold.h3, "center")
@@ -150,7 +159,7 @@ addCommandHandler("crownpass", function()
 									dxDrawGradient(screenX + 20, screenY + 280 + 150, 100, 1, eliteR, eliteG, eliteB, 200, false, false)
 									dxDrawGradient(screenX + 20 + 100, screenY + 280 - 1, 1, 150, eliteR, eliteG, eliteB, 200, true, false)
 									
-									isPassInfoWritten = true
+									passInfoWritten = true
 									scrollIndex = scrollIndex + 1
 									marginX = marginX + 110
 								end
@@ -202,11 +211,11 @@ addCommandHandler("crownpass", function()
 						
 						for index, value in ipairs(passMissions) do
 							if index > scroll and scrollIndex < maxScroll then
-								dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 40, 70, tocolor(32, 32, 32, 255))
+								dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70, tocolor(32, 32, 32, 255))
 								dxDrawRectangle(screenX + 20, screenY + 120 + marginY, 70, 70, tocolor(40, 40, 40, 255))
 								
-								if exports.cr_ui:inArea(screenX + 20, screenY + 120 + marginY, sizeX - 40, 70) then
-									dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 40, 70, tocolor(50, 50, 50, 100))
+								if exports.cr_ui:inArea(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70) then
+									dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70, tocolor(50, 50, 50, 100))
 									if getKeyState("mouse1") and clickTick + 500 < getTickCount() then
 										clickTick = getTickCount()
 										if getMissionValueById(index) == value[2] and not isRewardReceived(3, index) then
@@ -218,15 +227,15 @@ addCommandHandler("crownpass", function()
 								dxDrawText("", screenX + 36, screenY + 136 + marginY, 0, 0, tocolor(200, 200, 200), 1, icons.missionIcon)
 								dxDrawText(value[3], 0, screenY + 174 + marginY, screenX + 87, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.caption, "right")
 								dxDrawText(value[1], screenX + 105, screenY + 147 + marginY, 0, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.h5)
-								dxDrawText((getMissionValueById(index) or 0) .. "/" .. value[2], 0, screenY + 147 + marginY, screenX + sizeX - 35, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.h5, "right")
+								dxDrawText((getMissionValueById(index) or 0) .. "/" .. value[2], 0, screenY + 147 + marginY, screenX + sizeX - 55, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.h5, "right")
 								
 								if getMissionValueById(index) == value[2] and not isRewardReceived(3, index) then
-									dxDrawGradient(screenX + 20, screenY + 120 + marginY - 1, sizeX - 40, 1, 150, 150, 150, 255, false, true)
+									dxDrawGradient(screenX + 20, screenY + 120 + marginY - 1, sizeX - 60, 1, 150, 150, 150, 255, false, true)
 									dxDrawGradient(screenX + 20, screenY + 120 + marginY, 1, 70, 150, 150, 150, 255, true, true)
-									dxDrawGradient(screenX + 20, screenY + 120 + marginY + 70, sizeX - 40, 1, 150, 150, 150, 255, false, false)
-									dxDrawGradient(screenX + 20 + sizeX - 40, screenY + 120 + marginY - 1, 1, 70, 150, 150, 150, 255, true, false)
+									dxDrawGradient(screenX + 20, screenY + 120 + marginY + 70, sizeX - 60, 1, 150, 150, 150, 255, false, false)
+									dxDrawGradient(screenX + 20 + sizeX - 60, screenY + 120 + marginY - 1, 1, 70, 150, 150, 150, 255, true, false)
 								else
-									dxDrawText(isRewardReceived(3, index) and "" or "", screenX + sizeX - 42, screenY + 116 + marginY, screenX + sizeX, 0, tocolor(100, 100, 100), 1, icons.statusIcon, "center")
+									dxDrawText(isRewardReceived(3, index) and "" or "", screenX + sizeX - 82, screenY + 116 + marginY, screenX + sizeX, 0, tocolor(100, 100, 100), 1, icons.statusIcon, "center")
 								end
 								
 								scrollIndex = scrollIndex + 1
