@@ -324,11 +324,13 @@ function createCache(player)
         table.insert(icons, "country/-" .. player:getData("country"))
     end
 
-    for data, _ in pairs(badges) do
-        local title = player:getData(data)
+    for key, data in pairs(badges) do
+        local title = player:getData(key)
         if title then
             badge = title:gsub("#%x%x%x%x%x%x", "")
-            table.insert(icons, "badge")
+			if not data[5][-1] then
+				table.insert(icons, "badge")
+			end
         end
     end
 	
@@ -414,7 +416,7 @@ end)
 loadTimer = setTimer(function()
 	if getElementData(localPlayer, "loggedin") == 1 then
 		for _, value in pairs(exports.cr_items:getBadges()) do
-			badges[value[1]] = { value[4][1], value[4][2], value[4][3], value[5] }
+			badges[value[1]] = { value[4][1], value[4][2], value[4][3], value[5], value[3] }
 		end
 		
 		for _, value in pairs(exports.cr_items:getMasks()) do
