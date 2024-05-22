@@ -98,10 +98,16 @@ addEventHandler("pass.getReward", root, function(rewardType, rewardID)
 			local characterID = getElementData(client, "dbid")
 			
 			if (passXP + theMission[3]) >= 100 then
-				local difference = (passXP + theMission[3]) - 100
+				local totalXP = passXP + theMission[3]
 				local passLevel = getElementData(client, "pass_level") or 1
-				setElementData(client, "pass_xp", difference)
-				setElementData(client, "pass_level", passLevel + 1)
+
+				while totalXP >= 100 do
+					totalXP = totalXP - 100
+					passLevel = passLevel + 1
+				end
+
+				setElementData(client, "pass_xp", totalXP)
+				setElementData(client, "pass_level", passLevel)
 			else
 				setElementData(client, "pass_xp", passXP + theMission[3])
 			end

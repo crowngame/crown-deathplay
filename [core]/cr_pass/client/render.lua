@@ -297,6 +297,7 @@ function getMissionValueById(missionID)
 			end
 		end
 	end
+	return 0
 end
 
 function isRewardReceived(rewardType, rewardID)
