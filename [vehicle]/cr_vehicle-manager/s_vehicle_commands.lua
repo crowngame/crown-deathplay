@@ -2284,6 +2284,6 @@ function autoRespawnAllCivVehicles()
 			end
 		end
 	end
-	outputChatBox("==> Tüm araçların benzinleri doldurulmuştur! <==", root, 255, 194, 14)
+	outputChatBox(">> Tüm araçların benzinleri doldurulmuştur!", root, 255, 194, 14)
 end
 setTimer(autoRespawnAllCivVehicles, 3600000, 0)
