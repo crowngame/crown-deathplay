@@ -982,7 +982,7 @@ function respawnAllVehicles(thePlayer, commandName, timeToRespawn)
 				timeToRespawn = tonumber(timeToRespawn) or 30
 				timeToRespawn = timeToRespawn < 10 and 10 or timeToRespawn
 				exports.cr_global:sendMessageToAdmins("[ADM] " .. exports.cr_global:getPlayerFullAdminTitle(thePlayer) .. " isimli yetkili araç yenilemesi başlattı.")
-				outputChatBox(">> Tüm araçlar " .. timeToRespawn .. " saniye sonra yenilenecektir.", root, 255, 194, 14)
+				outputChatBox(">> Tüm araçlar " .. timeToRespawn .. " saniye sonra yenilenecektir!", root, 255, 194, 14)
 				respawnTimer = setTimer(respawnAllVehicles, timeToRespawn*1000, 1, thePlayer)
 			end
 			return
@@ -1116,6 +1116,8 @@ function respawnAllVehicles(thePlayer, commandName, timeToRespawn)
 				end
 			end
 		end
+		
+		outputChatBox(">> Tüm araçlar yenilenmiştir!", root, 255, 194, 14)
 		local timeTaken = (getTickCount() - tick)/1000
 		outputChatBox("=-=-=-=-=-=- Yenilenen Araçlar =-=-=-=-=-=-=", thePlayer, 255, 194, 14)
 		outputChatBox("Yenilenen " .. counter .. "/" .. counter + notmoved .. " araç. (" .. occupiedcounter .. " meşgul) .", thePlayer)
@@ -1177,7 +1179,7 @@ function respawnAllCivVehicles(thePlayer, commandName)
 				end
 			end
 		end
-		outputChatBox("==> Tüm sivil araçlar respawnlanmıştır! <==", root, 255, 194, 14)
+		outputChatBox(">> Tüm sivil araçlar yenilenmiştir!", root, 255, 194, 14)
 		outputChatBox("[!]#FFFFFF Yenilenen " .. counter .. " sivil araçlar.", thePlayer, 0, 255, 0, true)
 	end
 end
@@ -1433,7 +1435,7 @@ function fixAllVehicles(thePlayer, commandName)
 				end
 			end
 		end
-		outputChatBox("==> Tüm araçlar tamir edilmiştir! <==", root, 255, 194, 14)
+		outputChatBox(">> Tüm araçlar tamir edilmiştir!", root, 255, 194, 14)
 	end
 end
 addCommandHandler("fixvehs", fixAllVehicles)
