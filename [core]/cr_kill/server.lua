@@ -62,6 +62,9 @@ addEventHandler("onPlayerWasted", root, function(ammo, killer, killerweapon, bod
 			if bodypart == 9 then
 				exports.cr_pass:addMissionValue(killer, 4, 1)
 			end
+			
+			exports.cr_pass:addMissionValue(killer, 11, getElementData(killer, "kills"))
+			exports.cr_pass:addMissionValue(killer, 12, getElementData(killer, "kills"))
 		end
 	end
 end)

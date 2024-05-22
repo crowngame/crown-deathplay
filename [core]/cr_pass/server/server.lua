@@ -54,6 +54,11 @@ addEventHandler("pass.getReward", root, function(rewardType, rewardID)
 					else
 						exports.cr_infobox:addBox(client, "error", "Bu ürünü taşıyabilmek için yeterli alana sahip değilsiniz.")
 					end
+				elseif theReward[1] == 4 then
+					setElementData(client, "balance", math.floor(getElementData(client, "balance") + theReward[3]))
+					dbExec(mysql:getConnection(), "UPDATE accounts SET balance = ? WHERE id = ?", getElementData(client, "balance"), getElementData(client, "account:id"))
+					exports.cr_infobox:addBox(client, "success", "Başarıyla " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den " .. theReward[3] .. " TL Bakiyeyi aldınız.")
+					exports.cr_discord:sendMessage("pass-log", "[PASS] " .. getPlayerName(client):gsub("_", " ") .. " isimli oyuncu " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den " .. theReward[3] .. " TL Bakiyeyi aldı.")
 				end
 				
 				dbExec(mysql:getConnection(), "INSERT INTO pass_rewards SET character_id = ?, reward_type = ?, reward_id = ?", characterID, rewardType, rewardID)

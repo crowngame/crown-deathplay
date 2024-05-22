@@ -1,5 +1,4 @@
 screenSize = Vector2(guiGetScreenSize())
-developerMode = true
 
 theme = exports.cr_ui:useTheme()
 fonts = exports.cr_ui:useFonts()

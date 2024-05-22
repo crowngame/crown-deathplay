@@ -25,6 +25,9 @@ addCommandHandler("crownpass", function()
 	        renderTimer = setTimer(function()
 				dxDrawRectangle(screenX, screenY, sizeX, sizeY, tocolor(25, 25, 25, 255))
 
+				dxDrawText("CROWN PASS", screenX + 1, screenY - 45 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, fonts.BebasNeueBold.h0)
+				dxDrawText("CROWN PASS", screenX, screenY - 45, 0, 0, tocolor(255, 255, 255, 255), 1, fonts.BebasNeueBold.h0)
+				
 				dxDrawText("", screenX + sizeX - 20 + 1, screenY - 35 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, icons.iconClose)
 				dxDrawText("", screenX + sizeX - 20, screenY - 35, 0, 0, exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and tocolor(234, 83, 83, 255) or tocolor(255, 255, 255, 255), 1, icons.iconClose)
 				if exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
@@ -117,6 +120,9 @@ addCommandHandler("crownpass", function()
 								elseif value[1] == 3 then
 									dxDrawImage(screenX + 30 + marginX, screenY + 150, 80, 80, ":cr_items/images/" .. value[3] .. ".png")
 									dxDrawText(value[2], screenX + 140 + marginX, screenY + 230, screenX + marginX, 0, tocolor(189, 189, 189), 1, fonts.UbuntuRegular.body, "center")
+								elseif value[1] == 4 then
+									dxDrawText("", screenX + 55 + marginX, screenY + 165, 0, 0, tocolor(100, 100, 100), 1, icons.iconPass)
+									dxDrawText(value[3] .. " TL Bakiye", screenX + 140 + marginX, screenY + 225, screenX + marginX, 0, tocolor(189, 189, 189), 1, fonts.UbuntuRegular.body, "center")
 								else
 									dxDrawText("", screenX + 44 + marginX, screenY + 170, 0, 0, tocolor(100, 100, 100), 1, icons.iconPass)
 								end
@@ -177,6 +183,9 @@ addCommandHandler("crownpass", function()
 								elseif value[1] == 3 then
 									dxDrawImage(screenX + 30 + marginX, screenY + 310, 80, 80, ":cr_items/images/" .. value[3] .. ".png")
 									dxDrawText(value[2], screenX + 140 + marginX, screenY + 390, screenX + marginX, 0, tocolor(189, 189, 189), 1, fonts.UbuntuRegular.body, "center")
+								elseif value[1] == 4 then
+									dxDrawText("", screenX + 55 + marginX, screenY + 325, 0, 0, tocolor(100, 100, 100), 1, icons.iconPass)
+									dxDrawText(value[3] .. " TL Bakiye", screenX + 140 + marginX, screenY + 385, screenX + marginX, 0, tocolor(189, 189, 189), 1, fonts.UbuntuRegular.body, "center")
 								else
 									dxDrawText("", screenX + 44 + marginX, screenY + 330, 0, 0, tocolor(100, 100, 100), 1, icons.iconPass)
 								end

@@ -84,7 +84,8 @@ function hitDrop(thePlayer, index)
 		exports.cr_global:giveMoney(thePlayer, prices[randomPrice][2])
 		outputChatBox("[DROP]#FFFFFF " .. getPlayerName(thePlayer):gsub("_", " ") .. " isimli oyuncu drop'u açtı ve $" .. exports.cr_global:formatMoney(prices[randomPrice][2]) .. " kazandı.", root, 232, 113, 114, true)
 	elseif prices[randomPrice][1] == 3 then
-		if getElementData(thePlayer, "pass_type") ~= 2 then
+		local randomNumber = math.random(1, 2)
+		if (randomNumber == 1) and (getElementData(thePlayer, "pass_type") ~= 2) then
 			setElementData(thePlayer, "pass_type", 2)
 			dbExec(mysql:getConnection(), "UPDATE characters SET pass_type = 2 WHERE id = ?", getElementData(thePlayer, "dbid"))
 			outputChatBox("[DROP]#FFFFFF " .. getPlayerName(thePlayer):gsub("_", " ") .. " isimli oyuncu drop'u açtı ve #FFD43BElite Pass#FFFFFF kazandı.", root, 232, 113, 114, true)
@@ -93,4 +94,6 @@ function hitDrop(thePlayer, index)
 			outputChatBox("[DROP]#FFFFFF " .. getPlayerName(thePlayer):gsub("_", " ") .. " isimli oyuncu drop'u açtı ve $" .. exports.cr_global:formatMoney(500000) .. " kazandı.", root, 232, 113, 114, true)
 		end
 	end
+	
+	exports.cr_pass:addMissionValue(thePlayer, 13, 1)
 end
