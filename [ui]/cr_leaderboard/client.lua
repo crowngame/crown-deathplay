@@ -141,7 +141,7 @@ bindKey("f4", "down", function()
 						end
 						
 						local currentTime = getTickCount()
-						local targetTime = os.time({ year = 2024, month = 7, day = 31, hour = 23, min = 59, sec = 59 })
+						local targetTime = os.time({ year = 2024, month = 6, day = 30, hour = 23, min = 59, sec = 59 })
 						local difference = targetTime - os.time()
 
 						local days = math.floor(difference / (24 * 60 * 60))
