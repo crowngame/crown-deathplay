@@ -1,5 +1,12 @@
 screenSize = Vector2(guiGetScreenSize())
 
+serverColor = exports.cr_ui:getServerColor(1)
+eliteColor = {
+	red = bitExtract(serverColor, 16, 8),
+	green = bitExtract(serverColor, 8, 8),
+	blue = bitExtract(serverColor, 0, 8)
+}
+
 theme = exports.cr_ui:useTheme()
 fonts = exports.cr_ui:useFonts()
 icons = {

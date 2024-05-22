@@ -22,6 +22,28 @@ function addMissionValue(thePlayer, missionID, missionValue)
 	end
 end
 
+function setMissionValue(thePlayer, missionID, missionValue)
+	if thePlayer and missionID and missionValue then
+		local characterID = getElementData(thePlayer, "dbid")
+		dbQuery(function(qh, thePlayer, characterID, missionID, missionValue)
+			local result, rows, err = dbPoll(qh, 0)
+			if rows > 0 and result then
+				for index, value in ipairs(result) do
+					if value.mission_id == missionID then
+						if passMissions[missionID][2] > value.mission_value then
+							dbExec(mysql:getConnection(), "UPDATE pass_missions SET mission_value = ? WHERE id = ?", missionValue, value.id)
+							loadDatas(thePlayer)
+						end
+					end
+				end
+			else
+				dbExec(mysql:getConnection(), "INSERT INTO pass_missions SET character_id = ?, mission_id = ?, mission_value = ?", characterID, missionID, missionValue)
+				loadDatas(thePlayer)
+			end
+		end, {thePlayer, characterID, missionID, missionValue}, mysql:getConnection(), "SELECT * FROM pass_missions WHERE character_id = ? AND mission_id = ?", characterID, missionID)
+	end
+end
+
 addEvent("pass.getReward", true)
 addEventHandler("pass.getReward", root, function(rewardType, rewardID)
     if client ~= source then return end
@@ -127,18 +149,3 @@ function checkAndTriggerEvent(client, data1, data2, query1Completed, query2Compl
         triggerClientEvent(client, "pass.loadDatas", client, {data1, data2})
     end
 end
-
-function resetPassSeason(thePlayer, commandName)
-	if getElementData(thePlayer, "account:username") == "Farid" then
-		for _, player in ipairs(getElementsByType("player")) do
-			if (getElementData(player, "loggedin") == 1) then
-				setElementData(player, "pass_type", 1)
-				setElementData(player, "pass_level", 1)
-				setElementData(player, "pass_xp", 0)
-			end
-		end
-		
-		dbExec(mysql:getConnection(), "UPDATE characters SET pass_type = ?, pass_level = ?, pass_xp = ?", 1, 1, 0)
-	end
-end
---addCommandHandler("resetpassseason", resetPassSeason, false, false)

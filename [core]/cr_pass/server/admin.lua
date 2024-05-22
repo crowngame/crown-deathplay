@@ -220,3 +220,21 @@ function setPassType(thePlayer, commandName, targetPlayer, type)
 	end
 end
 addCommandHandler("setpasstype", setPassType, false, false)
+
+function resetPassSeason(thePlayer, commandName)
+	if getElementData(thePlayer, "account:username") == "Farid" then
+		for _, player in ipairs(getElementsByType("player")) do
+			if (getElementData(player, "loggedin") == 1) then
+				setElementData(player, "pass_type", 1)
+				setElementData(player, "pass_level", 1)
+				setElementData(player, "pass_xp", 0)
+			end
+		end
+		
+		dbExec(mysql:getConnection(), "UPDATE characters SET pass_type = ?, pass_level = ?, pass_xp = ?", 1, 1, 0)
+	else
+		outputChatBox("[!]#FFFFFF Bu komutu kullanabilmek için gerekli yetkiye sahip değilsiniz.", thePlayer, 255, 0, 0, true)
+		playSoundFrontEnd(thePlayer, 4)
+	end
+end
+--addCommandHandler("resetpassseason", resetPassSeason, false, false)

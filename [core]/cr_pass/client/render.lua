@@ -5,9 +5,6 @@ local clickTick = 0
 local datas = {}
 local loaded = false
 
-local serverColor = exports.cr_ui:getServerColor(1)
-local eliteR, eliteG, eliteB = bitExtract(serverColor, 16, 8), bitExtract(serverColor, 8, 8), bitExtract(serverColor, 0, 8)
-
 local maxScroll = 7
 local scroll = 0
 
@@ -25,8 +22,8 @@ addCommandHandler("crownpass", function()
 	        renderTimer = setTimer(function()
 				dxDrawRectangle(screenX, screenY, sizeX, sizeY, tocolor(25, 25, 25, 255))
 
-				dxDrawText("CROWN PASS", screenX + 1, screenY - 45 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, fonts.BebasNeueBold.h0)
-				dxDrawText("CROWN PASS", screenX, screenY - 45, 0, 0, tocolor(255, 255, 255, 255), 1, fonts.BebasNeueBold.h0)
+				dxDrawText("CROWN PASS " .. currentSeason .. ". SEZON", screenX + 1, screenY - 45 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, fonts.BebasNeueBold.h0, "left", "top", false, false, false, true)
+				dxDrawText("CROWN PASS " .. exports.cr_ui:getServerColor(2) .. currentSeason .. ". SEZON", screenX, screenY - 45, 0, 0, tocolor(255, 255, 255, 255), 1, fonts.BebasNeueBold.h0, "left", "top", false, false, false, true)
 				
 				dxDrawText("", screenX + sizeX - 20 + 1, screenY - 35 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, icons.iconClose)
 				dxDrawText("", screenX + sizeX - 20, screenY - 35, 0, 0, exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and tocolor(234, 83, 83, 255) or tocolor(255, 255, 255, 255), 1, icons.iconClose)
@@ -156,14 +153,14 @@ addCommandHandler("crownpass", function()
 							if index > scroll and scrollIndex < maxScroll then
 								if not passInfoWritten and index == 1 then
 									dxDrawRectangle(screenX + 20, screenY + 280, 100, 150, tocolor(32, 32, 32, 255))
-									dxDrawText("", screenX + 42, screenY + 320, 0, 0, tocolor(eliteR, eliteG, eliteB, 200), 1, icons.iconPass)
-									dxDrawText("ELITE", screenX + 140, screenY + 365, screenX, 0, tocolor(eliteR, eliteG, eliteB, 200), 1, fonts.BebasNeueBold.h3, "center")
+									dxDrawText("", screenX + 42, screenY + 320, 0, 0, tocolor(eliteColor.red, eliteColor.green, eliteColor.blue, 200), 1, icons.iconPass)
+									dxDrawText("ELITE", screenX + 140, screenY + 365, screenX, 0, tocolor(eliteColor.red, eliteColor.green, eliteColor.blue, 200), 1, fonts.BebasNeueBold.h3, "center")
 									
-									dxDrawGradient(screenX + 20, screenY + 280 - 1, 100, 1, eliteR, eliteG, eliteB, 200, false, true)
-									dxDrawGradient(screenX + 20, screenY + 280, 1, 150, eliteR, eliteG, eliteB, 200, true, true)
+									dxDrawGradient(screenX + 20, screenY + 280 - 1, 100, 1, eliteColor.red, eliteColor.green, eliteColor.blue, 200, false, true)
+									dxDrawGradient(screenX + 20, screenY + 280, 1, 150, eliteColor.red, eliteColor.green, eliteColor.blue, 200, true, true)
 									
-									dxDrawGradient(screenX + 20, screenY + 280 + 150, 100, 1, eliteR, eliteG, eliteB, 200, false, false)
-									dxDrawGradient(screenX + 20 + 100, screenY + 280 - 1, 1, 150, eliteR, eliteG, eliteB, 200, true, false)
+									dxDrawGradient(screenX + 20, screenY + 280 + 150, 100, 1, eliteColor.red, eliteColor.green, eliteColor.blue, 200, false, false)
+									dxDrawGradient(screenX + 20 + 100, screenY + 280 - 1, 1, 150, eliteColor.red, eliteColor.green, eliteColor.blue, 200, true, false)
 									
 									passInfoWritten = true
 									scrollIndex = scrollIndex + 1
@@ -172,7 +169,7 @@ addCommandHandler("crownpass", function()
 								
 								dxDrawRectangle(screenX + 20 + marginX, screenY + 280, 100, 150, exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 280, 100, 150) and tocolor(40, 40, 40, 255) or tocolor(32, 32, 32, 255))
 								dxDrawRectangle(screenX + 20 + marginX, screenY + 429, 100, 1, exports.cr_ui:rgba(rarityLevels[value[4]][2], 0.8))
-								dxDrawText(index, screenX + 30 + marginX, screenY + 285, 0, 0, tocolor(eliteR, eliteG, eliteB, 200), 1, fonts.BebasNeueBold.h5)
+								dxDrawText(index, screenX + 30 + marginX, screenY + 285, 0, 0, tocolor(eliteColor.red, eliteColor.green, eliteColor.blue, 200), 1, fonts.BebasNeueBold.h5)
 								
 								if value[1] == 1 then
 									dxDrawImage(screenX + 33 + marginX, screenY + 320, 70, 70, ":cr_items/images/134.png")
@@ -193,10 +190,10 @@ addCommandHandler("crownpass", function()
 								if #passRewards[2][index] ~= 0 then
 									if getElementData(localPlayer, "pass_type") == 2 then
 										if getElementData(localPlayer, "pass_level") >= index and not isRewardReceived(2, index) then
-											dxDrawGradient(screenX + 20 + marginX, screenY + 280 - 1, 100, 1, eliteR, eliteG, eliteB, 200, false, true)
-											dxDrawGradient(screenX + 20 + marginX, screenY + 280, 1, 150, eliteR, eliteG, eliteB, 200, true, true)
-											dxDrawGradient(screenX + 20 + marginX, screenY + 280 + 150, 100, 1, eliteR, eliteG, eliteB, 200, false, false)
-											dxDrawGradient(screenX + 20 + marginX + 100, screenY + 280 - 1, 1, 150, eliteR, eliteG, eliteB, 200, true, false)
+											dxDrawGradient(screenX + 20 + marginX, screenY + 280 - 1, 100, 1, eliteColor.red, eliteColor.green, eliteColor.blue, 200, false, true)
+											dxDrawGradient(screenX + 20 + marginX, screenY + 280, 1, 150, eliteColor.red, eliteColor.green, eliteColor.blue, 200, true, true)
+											dxDrawGradient(screenX + 20 + marginX, screenY + 280 + 150, 100, 1, eliteColor.red, eliteColor.green, eliteColor.blue, 200, false, false)
+											dxDrawGradient(screenX + 20 + marginX + 100, screenY + 280 - 1, 1, 150, eliteColor.red, eliteColor.green, eliteColor.blue, 200, true, false)
 											
 											if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 280, 100, 150) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
 												clickTick = getTickCount()
@@ -227,7 +224,7 @@ addCommandHandler("crownpass", function()
 									dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70, tocolor(50, 50, 50, 100))
 									if getKeyState("mouse1") and clickTick + 500 < getTickCount() then
 										clickTick = getTickCount()
-										if getMissionValueById(index) == value[2] and not isRewardReceived(3, index) then
+										if getMissionValueById(index) >= value[2] and not isRewardReceived(3, index) then
 											triggerServerEvent("pass.getReward", localPlayer, 3, index)
 										end
 									end
