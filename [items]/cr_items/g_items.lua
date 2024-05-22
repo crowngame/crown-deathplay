@@ -551,7 +551,7 @@ function getBadges()
 		[158] = { "green bandana", "a green bandana",				{[-1] = true},					{50,150,50},	158},
 		[168] = { "orange bandana", "a orange bandana",				{[-1] = true},					{210,105,30},	168},
 		[127] = { "FAA badge",		"a FAA badge",	{[64] = true},	{255,140,0},	2},
-		[82] = { "Rozet", "Rozet",	{[4] = true},	{255,255,255},	1}, --Farid | ADD TTR FACTION BAGDE ITEM | 24.1.14
+		[82] = { "Rozet", "Rozet",	{[-1] = true},	{255, 255, 255},	1},
 		[159] = { "Cargo Group ID", "An ID from Cargo Group", {[56] = true},  {255, 102, 0}, 1}, -- anumaz, Cargo Group ID
 		[180] = { "SAPT ID", "An ID from San Andreas Public Transport", {[64] = true},  {73, 136, 245}, 1}, -- Exciter
 		-- [161] = { "FAC ID", "an ID from Fleming Architecture and Construction", {[51] = true}, {171, 97, 0}, 1} -- anumaz, BCC ID
