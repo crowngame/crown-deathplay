@@ -9,7 +9,7 @@ setTimer(function()
 				local theVehicle = getPedOccupiedVehicle(localPlayer)
 				local speed = math.floor(getElementSpeed(theVehicle, "kmh"))
 				local fuel = getElementData(theVehicle, "fuel") or 100
-				exports.cr_ui:drawBorderedText(2, speed .. " KM/H\n" .. fuel .. " LT", screenX, screenY, screenX, 0, tocolor(225, 225, 230, 255), 1, font, "right")
+				exports.cr_ui:dxDrawBorderedText(2, speed .. " KM/H\n" .. fuel .. " LT", screenX, screenY, screenX, 0, tocolor(225, 225, 230, 255), 1, font, "right")
 			end
 		end
 	end
