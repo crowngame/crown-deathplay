@@ -22,15 +22,17 @@ function twitterGUI()
 		elseif source == submit then
 			if not isTimer(spamTimers[localPlayer]) then
 				if exports.cr_global:hasMoney(localPlayer, 1000) then
-					triggerServerEvent("twitter.sendTweet", localPlayer, guiGetText(edit))
-					spamTimers[localPlayer] = setTimer(function() end, 5 * 60 * 1000, 1)
+					if string.len(guiGetText(edit)) > 0 then
+						triggerServerEvent("twitter.sendTweet", localPlayer, guiGetText(edit))
+						spamTimers[localPlayer] = setTimer(function() end, 5 * 60 * 1000, 1)
+					else
+						exports.cr_infobox:addBox("error", "İçerik boş bırakılamaz.")
+					end
 				else
-					outputChatBox("[!]#FFFFFF Tweet göndermek için yeterli paranız yok.", 255, 0, 0, true)
-					playSoundFrontEnd(4)
+					exports.cr_infobox:addBox("error", "Tweet göndermek için yeterli paranız yok.")
 				end
 			else
-				outputChatBox("[!]#FFFFFF Her 5 dakikada bir tweet gönderebilirsiniz.", 255, 0, 0, true)
-				playSoundFrontEnd(4)
+				exports.cr_infobox:addBox("error", "Her 5 dakikada bir tweet gönderebilirsiniz.")
 			end
 			destroyElement(window)
 		end
