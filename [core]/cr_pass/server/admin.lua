@@ -238,26 +238,3 @@ function resetPass(thePlayer, commandName)
 	end
 end
 --addCommandHandler("resetpass", resetPass, false, false)
-
-function resetPassSeason(thePlayer, commandName)
-	if getElementData(thePlayer, "account:username") == "Farid" then
-		for _, player in ipairs(getElementsByType("player")) do
-			if (getElementData(player, "loggedin") == 1) then
-				local passXP = getElementData(player, "pass_xp") or 0
-				if passXP >= 100 then
-					local passLevel = getElementData(player, "pass_level") or 1
-					setElementData(player, "pass_xp", 0)
-					setElementData(player, "pass_level", passLevel + 1)
-					
-					print(inspect(player))
-				end
-			end
-		end
-		
-		dbExec(mysql:getConnection(), "UPDATE characters SET pass_xp = 0, pass_level = pass_level + 1 WHERE pass_xp >= 100")
-	else
-		outputChatBox("[!]#FFFFFF Bu komutu kullanabilmek için gerekli yetkiye sahip değilsiniz.", thePlayer, 255, 0, 0, true)
-		playSoundFrontEnd(thePlayer, 4)
-	end
-end
-addCommandHandler("fixpass", resetPassSeason, false, false)

@@ -12,16 +12,7 @@ function getMoney(thePlayer)
 	return getElementData(thePlayer, "money") or 0
 end
 
--- ////////////////////////////////////
-
 function formatMoney(amount)
-	--if not amount or not tonumber(amount) or amount==0 then
-		--return 0
-	--end
-	local left,num,right = string.match(tostring(amount),'^([^%d]*%d)(%d*)(.-)$')
-	return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right
-end
-
-function takeMoney(thePlayer, amount)
-	return triggerServerEvent("global:takeMoney", thePlayer, thePlayer, amount)
+	local left, num, right = string.match(tostring(amount), '^([^%d]*%d)(%d*)(.-)$')
+	return left .. (num:reverse():gsub('(%d%d%d)','%1,'):reverse()) .. right
 end

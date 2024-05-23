@@ -20,6 +20,7 @@ end
 
 local moneyTimer = {}
 local loopLimit = 300
+
 function giveMoney(thePlayer, amount)
 	amount = tonumber(amount) or 0
 	if amount == 0 then
@@ -31,7 +32,6 @@ function giveMoney(thePlayer, amount)
 				return false
 			end
 
-			-- Money / Add a loop check in case takeItem function fails. / Farid
 			moneyTimer[thePlayer] = 0
 			while exports['cr_items']:takeItem(thePlayer, 134) do
 				if moneyTimer[thePlayer] >= loopLimit then
@@ -42,10 +42,9 @@ function giveMoney(thePlayer, amount)
 				end
 			end
 			
-			if not setElementData(thePlayer, "money", getMoney(thePlayer) + amount, true) then
+			if not setElementData(thePlayer, "money", getMoney(thePlayer) + amount) then
 				return false
 			end
-
 			
 			if tonumber(getElementData(thePlayer, "money")) > 0 then
 				exports.cr_global:giveItem(thePlayer, 134, tonumber(getElementData(thePlayer, "money")))
@@ -54,7 +53,7 @@ function giveMoney(thePlayer, amount)
 			triggerClientEvent(thePlayer, "moneyUpdateFX", thePlayer, true, amount)
 			return true
 		elseif getElementType(thePlayer) == "team" then
-			return mysql:query_free("UPDATE factions SET bankbalance = bankbalance + " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", getMoney(thePlayer) + amount, true) 
+			return mysql:query_free("UPDATE factions SET bankbalance = bankbalance + " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", getMoney(thePlayer) + amount) 
 		end
 	end
 	return false
@@ -90,7 +89,7 @@ function takeMoney(thePlayer, amount, rest)
 					end
 				end
 
-				if not setElementData(thePlayer, "money", money - amount, true)	then
+				if not setElementData(thePlayer, "money", money - amount) then
 					return false
 				end
 				
@@ -101,7 +100,7 @@ function takeMoney(thePlayer, amount, rest)
 				triggerClientEvent(thePlayer, "moneyUpdateFX", thePlayer, false, amount)
 				return true, amount
 			elseif getElementType(thePlayer) == "team" then
-				return mysql:query_free("UPDATE factions SET bankbalance = bankbalance - " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", money - amount, true)	
+				return mysql:query_free("UPDATE factions SET bankbalance = bankbalance - " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", money - amount)	
 			end
 			return false, 0
 		end
@@ -120,7 +119,6 @@ function setMoney(thePlayer, amount, onSpawn)
 				end
 			end
 
-			-- Money / Add a loop check in case takeItem function fails. / Farid
 			moneyTimer[thePlayer] = 0
 			while exports['cr_items']:takeItem(thePlayer, 134) do
 				if moneyTimer[thePlayer] >= loopLimit then
@@ -133,15 +131,13 @@ function setMoney(thePlayer, amount, onSpawn)
 
 			local currentMoney = getElementData(thePlayer, "money")
 
-			if not setElementData(thePlayer, "money", amount, true) then
+			if not setElementData(thePlayer, "money", amount) then
 				return false
 			end
-
 			
 			if amount > 0 then
 				exports.cr_global:giveItem(thePlayer, 134, amount)
 			end
-		
 			
 			if not onSpawn then
 				if amount > currentMoney then
@@ -153,7 +149,7 @@ function setMoney(thePlayer, amount, onSpawn)
 
 			return true
 		elseif getElementType(thePlayer) == "team" then
-			return mysql:query_free("UPDATE factions SET bankbalance = " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", amount, true)
+			return mysql:query_free("UPDATE factions SET bankbalance = " .. amount .. " WHERE id = " .. getElementData(thePlayer, "id")) and setElementData(thePlayer, "money", amount)
 		end
 	end
 end
@@ -189,13 +185,39 @@ function checkMoneyHacks(thePlayer)
 	end
 end
 
--- ////////////////////////////////////
-
 function formatMoney(amount)
-	local left,num,right = string.match(tostring(amount),'^([^%d]*%d)(%d*)(.-)$')
-	return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right
+	local left, num, right = string.match(tostring(amount), '^([^%d]*%d)(%d*)(.-)$')
+	return left .. (num:reverse():gsub('(%d%d%d)','%1,'):reverse()) .. right
 end
 
+local moneyLimitTimers = {}
+local bankMoneyLimitTimers = {}
 
-addEvent("global:takeMoney", true)
-addEventHandler("global:takeMoney", root, takeMoney)
+addEventHandler("onElementDataChange", root, function(theKey, oldValue, newValue)
+	if getElementData(source, "loggedin") == 1 then
+		if theKey == "money" then
+			local money = (tonumber(newValue)) or 0
+			
+			if money > 500000000 then
+				moneyLimitTimers[source] = setTimer(function(source)
+					setMoney(source, 500000000)
+					outputChatBox("[!]#FFFFFF Para miktarınız $500,000,000 sınırını aştığı için $500,000,000'a düşürüldü.", source, 255, 0, 0, true)
+					playSoundFrontEnd(source, 4)
+				end, 1000, 1, source)
+			end
+		
+			setPlayerMoney(source, money, true)
+		elseif theKey == "bankmoney" then
+			local bankMoney = (tonumber(newValue)) or 0
+			
+			if bankMoney > 500000000 then
+				bankMoneyLimitTimers[source] = setTimer(function(source)
+					setElementData(source, "bankmoney", 500000000)
+					outputChatBox("[!]#FFFFFF Banka para miktarınız $500,000,000 sınırını aştığı için $500,000,000'a düşürüldü.", source, 255, 0, 0, true)
+					playSoundFrontEnd(source, 4)
+					dbExec(mysql:getConnection(), "UPDATE characters SET bankmoney = ? WHERE id = ?", 500000000, getElementData(source, "dbid"))
+				end, 1000, 1, source)
+			end
+		end
+	end
+end)

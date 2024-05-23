@@ -17,8 +17,6 @@
     <script src="client/speedo/speedo_3.lua" type="client" cache="false" />
     <script src="client/speedo/speedo_4.lua" type="client" cache="false" />
     
-    <script src="server/server.lua" type="server" />
-    
     <file src="public/fonts/GothamPro.ttf" />
     <file src="public/fonts/GothamProBoldItalic.ttf" />
 	
