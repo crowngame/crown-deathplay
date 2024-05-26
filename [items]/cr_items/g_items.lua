@@ -423,11 +423,11 @@ g_items = {
     [578] = { "Kazma", "Kazı yaparken kullanabileceğiniz bir eşya.", 4, 2386, 0, 0, 0, 0.285, weight = 0.1 }, --oKarosa	
 	[579] = { "Can", "Canınızı 100% olarak ayarlar.", 3, 3044, 0, 0, 0, 0.04, weight = 0.1 },
 	[580] = { "Zırh", "Zırhınızı 100% olarak ayarlar.", 3, 3044, 0, 0, 0, 0.04, weight = 0.1 },
-	[581] = { "Bronz Şans Kutusu", "Boş - (50,000$ - 100,000$) - 3 günlük VIP 2 - 7 günlük VIP 2 - TEC9 Çıkabilir.", 3, 1083, 0, 0, 0, 0.04, weight = 0.1 },
-	[582] = { "Gümüş Şans Kutusu", "Boş - (150,000$ - 250,000$) - 15 günlük VIP 2 - 3 günlük VIP 3 - MP5 Çıkabilir.", 3, 1083, 0, 0, 0, 0.04, weight = 0.1 },
-	[583] = { "Altın Şans Kutusu", "Boş - (300,000$ - 500,000$) - 7 günlük VIP 3 - 15 günlük VIP 3 - AK47 Çıkabilir.", 3, 1083, 0, 0, 0, 0.04, weight = 0.1 },
-	[584] = { "Elmas Şans Kutusu", "Boş - (550,000$ - 750,000$) - 3 günlük VIP 4 - 7 günlük VIP 4 - M4 Çıkabilir.", 3, 1083, 0, 0, 0, 0.04, weight = 0.1 },
-	[585] = { "Yılbaşı Kutusu", "Boş - (500,000$ - 1,000,000$) - (3 - 7 günlük VIP 3, 3 - 7 günlük VIP 4) - (5 TL - 10 TL) - (Tec-9, MP5, AK47, M4) Çıkabilir.", 3, 1083, 0, 0, 0, 0.04, weight = 0.1 },
+	[581] = { "Bronz Şans Kutusu", "Boş - (50,000$ - 100,000$) - 3 günlük VIP 2 - 7 günlük VIP 2 - TEC9 Çıkabilir.", 4, 1271, 0, 0, 0, 0, weight = 0 },
+	[582] = { "Gümüş Şans Kutusu", "Boş - (150,000$ - 250,000$) - 15 günlük VIP 2 - 3 günlük VIP 3 - MP5 Çıkabilir.", 4, 1271, 0, 0, 0, 0, weight = 0 },
+	[583] = { "Altın Şans Kutusu", "Boş - (300,000$ - 500,000$) - 7 günlük VIP 3 - 15 günlük VIP 3 - AK47 Çıkabilir.", 4, 1271, 0, 0, 0, 0, weight = 0 },
+	[584] = { "Elmas Şans Kutusu", "Boş - (550,000$ - 750,000$) - 3 günlük VIP 4 - 7 günlük VIP 4 - M4 Çıkabilir.", 4, 1271, 0, 0, 0, 0, weight = 0 },
+	[585] = { "Yılbaşı Kutusu", "Boş - (500,000$ - 1,000,000$) - (3 - 7) günlük VIP 3 - (3 - 7) günlük VIP 4 - (5 TL - 10 TL) - (Tec-9, MP5, AK47, M4) Çıkabilir.", 4, 1271, 0, 0, 0, 0, weight = 0 },
 }
 
 	-- name, description, category, model, rx, ry, rz, zoffset

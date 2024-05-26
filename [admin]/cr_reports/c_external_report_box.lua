@@ -5,7 +5,6 @@ local woffset, hoffset = 0, 0
 local sx, sy = guiGetScreenSize()
 local content = {}
 local line = 10
-local thisResourceElement = getResourceRootElement(getThisResource())
 local font = exports.cr_fonts:getFont("sf-bold", 11)
 local font2 = exports.cr_fonts:getFont("sf-regular", 9)
 
@@ -29,19 +28,15 @@ end
 addEvent("report-system:updateOverlay", true)
 addEventHandler("report-system:updateOverlay", localPlayer, updateOverlay)
 
-addEventHandler("onClientElementDataChange", thisResourceElement , 
-	function(n)
-		if n == "reportPanel" then
-			updateOverlay(getElementData(thisResourceElement, "reportPanel") or false)
-		end
-	end, false
-)
+addEventHandler("onClientElementDataChange", resourceRoot, function(n)
+	if n == "reportPanel" then
+		updateOverlay(getElementData(resourceRoot, "reportPanel") or false)
+	end
+end, false)
 
-
-setTimer(
-function ()
+setTimer(function()
 	if showExternalReportBox(localPlayer) then 
-		if (getElementData(localPlayer, "loggedin") == 1) and(getPedWeapon(localPlayer) ~= 43 or not getPedControlState("aim_weapon"))  and not isPlayerMapVisible() then
+		if (getElementData(localPlayer, "loggedin") == 1) and (getPedWeapon(localPlayer) ~= 43 or not getPedControlState("aim_weapon"))  and not isPlayerMapVisible() then
 			local w = width
 			local h = 16*(line)+30
 			local posX = (sx/2)-(w/2)+woffset

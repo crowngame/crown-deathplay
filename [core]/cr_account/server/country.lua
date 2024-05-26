@@ -1,12 +1,12 @@
 ﻿local mysql = exports.cr_mysql
 
-function changeCountry(countryID)
+function changeCountry(country)
 	if isElement(source) then
-		countryID = tonumber(countryID)
-		if countryID then
+		country = tonumber(country)
+		if country then
 			local dbid = getElementData(source, "dbid")
-			setElementData(source, "country", countryID)
-			dbExec(mysql:getConnection(), "UPDATE characters SET country = " .. countryID .. " WHERE id = " .. dbid)
+			setElementData(source, "country", country)
+			dbExec(mysql:getConnection(), "UPDATE characters SET country = ? WHERE id = ?", country, dbid)
 		end
 	end
 end

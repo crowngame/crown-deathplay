@@ -4,7 +4,6 @@ mysql = exports.cr_mysql
 
 addEvent("onPlayerInteriorChange", true)
 
--- Defines
 INTERIOR_X = 1
 INTERIOR_Y = 2
 INTERIOR_Z = 3
@@ -161,7 +160,6 @@ function reloadOneElevator(elevatorID, skipcheck)
 		destroyElement(realElevatorElement)
 		loadOneElevator(tonumber(dbid), false)
 	else
-		--outputDebugString("You suckx2")
 		outputDebugString("Tried to reload elevator without ID.")
 	end
 end

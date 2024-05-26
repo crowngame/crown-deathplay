@@ -22,7 +22,7 @@ local seasonText = "Sezon 5"
 local path = ":cr_rank/public/images/1.png"
 
 local musicSound
-local musicLink = "https://cdn.discordapp.com/attachments/1140655220653826109/1238820066217295962/Y2meta.app_-_Rammstein_-_Sonne_SLOWED_Best_Part_128_kbps.mp3?ex=6649e717&is=66489597&hm=9637ff4a8a20dff507552a3a4d0d82a2db7dc7c44a95d67eed7dd4c42a8009cd&"
+local musicLink = "https://cdn.discordapp.com/attachments/1140655220653826109/1238820066217295962/Y2meta.app_-_Rammstein_-_Sonne_SLOWED_Best_Part_128_kbps.mp3?ex=66507e97&is=664f2d17&hm=f01db81388db103ff6bd3679a7817ea17d34f76caaa55cc630bda5633882cea9&"
 
 local volume = 1
 local volumeIncrement = 0.01
