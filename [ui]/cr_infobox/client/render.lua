@@ -17,7 +17,8 @@ Infobox.types = {
     Announcement = 'announcement',
     Discord = 'discord',
     Instagram = 'instagram',
-    Youtube = 'youtube'
+    Youtube = 'youtube',
+    Tiktok = 'tiktok'
 }
 Infobox.padding = 10
 Infobox.lastClick = 0
@@ -142,6 +143,19 @@ Infobox.colorScheme = {
             text = 100,
             icon = 200
         }
+    },
+    [Infobox.types.Tiktok] = {
+        __themeColor = 'tiktok',
+        __icon = '',
+        __sound = 'public/sounds/discord.mp3',
+        __iconFont = 'FontAwesomeBrand',
+        __colors = {
+            background = 900,
+            hover = 800,
+            border = 700,
+            text = 100,
+            icon = 200
+        }
     }
 }
 
@@ -204,6 +218,7 @@ function Infobox.overrideTheme(theme)
         [100] = '#F2F2F2',
         [50] = '#45225B'
     }
+    theme.TIKTOK = theme.GRAY
     theme.WEBSITE = theme.GRAY
 
     return theme
