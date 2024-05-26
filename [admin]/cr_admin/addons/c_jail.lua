@@ -49,7 +49,7 @@ setTimer(function()
 			},
 			
 			color = theme.GRAY[900],
-			alpha = 1,
+			alpha = 0.9,
 			radius = 10
 		}
 		dxDrawText(title, x, y, width + x, height + y, tocolor(245, 245, 245), 1, fonts.font1, "center", "center", false, false, false, true)
@@ -69,7 +69,7 @@ setTimer(function()
 			},
 			
 			color = theme.GRAY[900],
-			alpha = 1,
+			alpha = 0.9,
 			radius = 10
 		}
 		dxDrawText(remaining, x, y, width + x, height + y, tocolor(215, 215, 215), 0.8, fonts.font2, "center", "center")
