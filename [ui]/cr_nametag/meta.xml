@@ -282,6 +282,7 @@
     <file src="public/images/icons/tags/104.png" />
     <file src="public/images/icons/tags/105.png" />
     <file src="public/images/icons/tags/106.png" />
+    <file src="public/images/icons/tags/107.png" />
     
     <download_priority_group>995</download_priority_group>
 	<oop>true</oop>

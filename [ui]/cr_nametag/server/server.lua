@@ -4,7 +4,7 @@ function etiketVer(thePlayer, commandName, targetPlayer, level)
 	if exports.cr_integration:isPlayerGeneralAdmin(thePlayer) then
 		if targetPlayer and level then
             level = tonumber(level)
-			if level >= 1 and level <= 106 then
+			if level >= 1 and level <= 107 then
 				targetPlayer, targetPlayerName = exports.cr_global:findPlayerByPartialNick(thePlayer, targetPlayer)
 				if targetPlayer then
 					if getElementData(targetPlayer, "loggedin") == 1 then
