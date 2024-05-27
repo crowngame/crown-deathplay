@@ -4,6 +4,7 @@ local clickTick = 0
 
 local datas = {}
 local loaded = false
+local loading = false
 
 local maxScroll = 7
 local scroll = 0
@@ -27,7 +28,7 @@ addCommandHandler("crownpass", function()
 				
 				dxDrawText("", screenX + sizeX - 20 + 1, screenY - 35 + 1, 0, 0, tocolor(0, 0, 0, 255), 1, icons.iconClose)
 				dxDrawText("", screenX + sizeX - 20, screenY - 35, 0, 0, exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and tocolor(234, 83, 83, 255) or tocolor(255, 255, 255, 255), 1, icons.iconClose)
-				if exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+				if exports.cr_ui:inArea(screenX + sizeX - 20, screenY - 35, dxGetTextWidth("", 1, icons.iconClose), dxGetFontHeight(1, icons.iconClose)) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() then
 					clickTick = getTickCount()
 					killTimer(renderTimer)
 					showCursor(false)
@@ -61,7 +62,7 @@ addCommandHandler("crownpass", function()
 					dxDrawButton(screenX + sizeX - 110, screenY + 20, 90, 25, exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 20, 90, 25) and tocolor(50, 50, 50, 255) or tocolor(40, 40, 40, 255))
 					dxDrawText("Ana Sayfa", screenX + sizeX - 35, screenY + 25, screenX + sizeX - 95, 0, tocolor(150, 150, 150), 1, fonts.UbuntuRegular.caption, "center")
 					
-					if exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 20, 90, 25) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+					if exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 20, 90, 25) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 						clickTick = getTickCount()
 						maxScroll = 7
 						scroll = 0
@@ -71,7 +72,7 @@ addCommandHandler("crownpass", function()
 					dxDrawButton(screenX + sizeX - 110, screenY + 55, 90, 25, exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 55, 90, 25) and tocolor(50, 50, 50, 255) or tocolor(40, 40, 40, 255))
 					dxDrawText("Görevler", screenX + sizeX - 35, screenY + 60, screenX + sizeX - 95, 0, tocolor(150, 150, 150), 1, fonts.UbuntuRegular.caption, "center")
 					
-					if exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 55, 90, 25) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+					if exports.cr_ui:inArea(screenX + sizeX - 110, screenY + 55, 90, 25) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 						clickTick = getTickCount()
 						maxScroll = 4
 						scroll = 0
@@ -131,9 +132,10 @@ addCommandHandler("crownpass", function()
 										dxDrawGradient(screenX + 20 + marginX, screenY + 120 + 150, 100, 1, 189, 189, 189, 200, false, false)
 										dxDrawGradient(screenX + 20 + marginX + 100, screenY + 120 - 1, 1, 150, 189, 189, 189, 200, true, false)
 										
-										if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 120, 100, 150) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+										if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 120, 100, 150) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 											clickTick = getTickCount()
 											triggerServerEvent("pass.getReward", localPlayer, 1, index)
+											loading = true
 										end
 									else
 										dxDrawText(not (getElementData(localPlayer, "pass_level") >= index) and not isRewardReceived(1, index) and "" or "", screenX + 119 + marginX, screenY + 116, screenX + 119 + marginX, 0, tocolor(100, 100, 100), 1, icons.statusIcon, "center")
@@ -195,9 +197,10 @@ addCommandHandler("crownpass", function()
 											dxDrawGradient(screenX + 20 + marginX, screenY + 280 + 150, 100, 1, eliteColor.red, eliteColor.green, eliteColor.blue, 200, false, false)
 											dxDrawGradient(screenX + 20 + marginX + 100, screenY + 280 - 1, 1, 150, eliteColor.red, eliteColor.green, eliteColor.blue, 200, true, false)
 											
-											if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 280, 100, 150) and getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+											if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 280, 100, 150) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 												clickTick = getTickCount()
 												triggerServerEvent("pass.getReward", localPlayer, 2, index)
+												loading = true
 											end
 										else
 											dxDrawText((not (getElementData(localPlayer, "pass_level") >= index)) and "" or "", screenX + 119 + marginX, screenY + 276, screenX + 119 + marginX, 0, tocolor(100, 100, 100), 1, icons.statusIcon, "center")
@@ -222,10 +225,11 @@ addCommandHandler("crownpass", function()
 								
 								if exports.cr_ui:inArea(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70) then
 									dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70, tocolor(50, 50, 50, 100))
-									if getKeyState("mouse1") and clickTick + 500 < getTickCount() then
+									if getKeyState("mouse1") and clickTick + 500 <= getTickCount() then
 										clickTick = getTickCount()
-										if getMissionValueById(index) >= value[2] and not isRewardReceived(3, index) then
+										if getMissionValueById(index) >= value[2] and not isRewardReceived(3, index) and not loading then
 											triggerServerEvent("pass.getReward", localPlayer, 3, index)
+											loading = true
 										end
 									end
 								end
@@ -249,6 +253,22 @@ addCommandHandler("crownpass", function()
 							end
 						end
 					end
+					
+					if loading then
+						dxDrawRectangle(screenX, screenY, sizeX, sizeY, tocolor(25, 25, 25, 100))
+						exports.cr_ui:drawSpinner({
+							position = {
+								x = screenX + (sizeX - 128) / 2,
+								y = screenY + (sizeY - 128) / 2
+							},
+							size = 128,
+
+							speed = 2,
+
+							variant = "soft",
+							color = "gray"
+						})
+					end
 				end
 			end, 0, 0)
 		else
@@ -264,6 +284,11 @@ addEventHandler("pass.loadDatas", root, function(_datas)
 		datas = _datas
 		loaded = true
 	end
+end)
+
+addEvent("pass.removeLoading", true)
+addEventHandler("pass.removeLoading", root, function()
+	loading = false
 end)
 
 bindKey("mouse_wheel_down", "down", function()

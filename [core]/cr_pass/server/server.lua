@@ -121,6 +121,7 @@ addEventHandler("pass.getReward", root, function(rewardType, rewardID)
 			exports.cr_infobox:addBox(client, "error", "Bir sorun oluştu.")
 		end
 	end
+	triggerClientEvent(client, "pass.removeLoading", client)
 end)
 
 function loadDatas(client)
