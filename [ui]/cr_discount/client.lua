@@ -1,11 +1,11 @@
 ﻿local screenSize = Vector2(guiGetScreenSize())
-local text = "%50 İNDİRİM - discord.gg/crowndp"
+local text = "%50 İNDİRİM >> discord.gg/crowndp"
 local fonts = exports.cr_ui:useFonts()
 local screenX, screenY = 10, screenSize.y - dxGetFontHeight(1, fonts.UbuntuRegular.caption) - 10
 
 local r, g, b = 255, 0, 0
 local step = 1
-local colorChangeSpeed = 2
+local colorChangeSpeed = 10
 
 function updateColor()
     if r > 0 and b == 0 then
