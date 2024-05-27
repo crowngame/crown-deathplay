@@ -4,6 +4,7 @@ local positions = {
 	{x = 513.517578125, y = -1330.0185546875, width = 65, depth = 75}, -- Zengin Galeri
 	{x = 2111.4921875, y = -1163.078125, width = 50, depth = 50}, -- Orta Galeri
 	{x = 1509.718359375, y = -1481.3271484375, width = 50, depth = 50}, -- Crown Galeri
+	-- {x = 163.2236328125, y = -1886.603515625, width = 100, depth = 100}, -- O Ses Crown
 }
 local greenzones = {}
 local lastPositions = {}
