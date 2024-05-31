@@ -58,11 +58,12 @@ addEventHandler("pass.getReward", root, function(rewardType, rewardID)
 					exports.cr_infobox:addBox(client, "success", "Başarıyla " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den $" .. exports.cr_global:formatMoney(theReward[3]) .. " miktar parayı aldınız.")
 					exports.cr_discord:sendMessage("pass-log", "[PASS] " .. getPlayerName(client):gsub("_", " ") .. " isimli oyuncu " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den $" .. exports.cr_global:formatMoney(theReward[3]) .. " miktar parayı aldı.")
 				elseif theReward[1] == 2 then
-					if exports.cr_items:hasSpaceForItem(client, 116, theReward[3]) then
-						local serial1 = tonumber(getElementData(client, "account:character:id"))
-						local serial2 = tonumber(getElementData(client, "account:character:id"))
-						local mySerial = exports.cr_global:createWeaponSerial(1, serial1, serial2)
-						exports.cr_global:giveItem(client, 115, theReward[3] .. ":" .. mySerial .. ":" .. getWeaponNameFromID(theReward[3]) .. "::")
+					local serial1 = tonumber(getElementData(client, "account:character:id"))
+					local serial2 = tonumber(getElementData(client, "account:character:id"))
+					local mySerial = exports.cr_global:createWeaponSerial(1, serial1, serial2)
+					local itemValue = theReward[3] .. ":" .. mySerial .. ":" .. getWeaponNameFromID(theReward[3]) .. "::"
+					if exports.cr_items:hasSpaceForItem(client, 115, itemValue) then
+						exports.cr_global:giveItem(client, 115, itemValue)
 						exports.cr_infobox:addBox(client, "success", "Başarıyla " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den " .. theReward[2] .. " markalı silahı aldınız.")
 						exports.cr_discord:sendMessage("pass-log", "[PASS] " .. getPlayerName(client):gsub("_", " ") .. " isimli oyuncu " .. rewardID .. ". seviye " .. getPassName(rewardType) .. " Pass'den " .. theReward[2] .. " markalı silahı aldı.")
 					else

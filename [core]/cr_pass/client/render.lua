@@ -13,7 +13,13 @@ local selectedPage = 1
 
 addCommandHandler("crownpass", function()
 	if getElementData(localPlayer, "loggedin") == 1 then
-	    if not isTimer(renderTimer) then
+	    if exports.cr_network:getNetworkStatus() then
+            outputChatBox("[!]#FFFFFF Internet bağlantınızı kontrol edin.", 255, 0, 0, true)
+			playSoundFrontEnd(4)
+            return
+        end
+		
+		if not isTimer(renderTimer) then
 			loaded = false
 			maxScroll = 7
 			scroll = 0
@@ -134,6 +140,13 @@ addCommandHandler("crownpass", function()
 										
 										if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 120, 100, 150) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 											clickTick = getTickCount()
+											
+											if exports.cr_network:getNetworkStatus() then
+												outputChatBox("[!]#FFFFFF Internet bağlantınızı kontrol edin.", 255, 0, 0, true)
+												playSoundFrontEnd(4)
+												return
+											end
+											
 											triggerServerEvent("pass.getReward", localPlayer, 1, index)
 											loading = true
 										end
@@ -199,6 +212,13 @@ addCommandHandler("crownpass", function()
 											
 											if exports.cr_ui:inArea(screenX + 20 + marginX, screenY + 280, 100, 150) and getKeyState("mouse1") and clickTick + 500 <= getTickCount() and not loading then
 												clickTick = getTickCount()
+												
+												if exports.cr_network:getNetworkStatus() then
+													outputChatBox("[!]#FFFFFF Internet bağlantınızı kontrol edin.", 255, 0, 0, true)
+													playSoundFrontEnd(4)
+													return
+												end
+												
 												triggerServerEvent("pass.getReward", localPlayer, 2, index)
 												loading = true
 											end
@@ -227,6 +247,13 @@ addCommandHandler("crownpass", function()
 									dxDrawRectangle(screenX + 20, screenY + 120 + marginY, sizeX - 60, 70, tocolor(50, 50, 50, 100))
 									if getKeyState("mouse1") and clickTick + 500 <= getTickCount() then
 										clickTick = getTickCount()
+										
+										if exports.cr_network:getNetworkStatus() then
+											outputChatBox("[!]#FFFFFF Internet bağlantınızı kontrol edin.", 255, 0, 0, true)
+											playSoundFrontEnd(4)
+											return
+										end
+										
 										if getMissionValueById(index) >= value[2] and not isRewardReceived(3, index) and not loading then
 											triggerServerEvent("pass.getReward", localPlayer, 3, index)
 											loading = true
