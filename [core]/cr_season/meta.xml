@@ -1,9 +1,12 @@
 <meta>
     <script src="___generated___/bundle.lua" type="shared" cache="false" />
     <script src="___generated___/checker.lua" type="client" cache="false" />
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+	<oop>true</oop>
     
-    <script src="client/camera.lua" type="client" cache="false" />
-    <script src="client/render.lua" type="client" cache="false" />
+    <script src="client/main.lua" type="client" cache="false" />
+    <script src="client/leaders.lua" type="client" cache="false" />
+    <script src="client/scene.lua" type="client" cache="false" />
 	
     <script src="server/server.lua" type="server" />
     
@@ -13,10 +16,8 @@
     <file src="public/fonts/5.ttf" />
     <file src="public/fonts/6.ttf" />
     
-    <file src="public/sounds/sound.mp3" />
+    <file src="public/sounds/intro.mp3" />
+    <file src="public/sounds/music.mp3" />
     <file src="public/sounds/swish.wav" />
     <file src="public/sounds/teleport.mp3" />
-    
-    <download_priority_group>994</download_priority_group>
-    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
 </meta>
