@@ -135,6 +135,8 @@ local defaultServerEventNames = {
     onWeaponFire = "onWeaponFire",
 }
 
+local dimensionChangeTimers = {}
+
 addEventHandler("onElementDataChange", root, function(theKey, oldValue, newValue)
 	if protectedDatas[theKey] then
 		if getElementType(source) == "player" then
@@ -329,6 +331,18 @@ addEventHandler("onDebugMessage", root, function(msg)
             banPlayer(thePlayer, true, false, true, "Shine Anti-Cheat", "SAC #20")
         end
     end
+end)
+
+addEventHandler("onElementDimensionChange", root, function(oldDimension, newDimension)
+	if getElementType(source) == "player" then
+		if newDimension == 33333 then
+			dimensionChangeTimers[source] = setTimer(function(source)
+				setElementDimension(source, oldDimension)
+				outputChatBox("[!]#FFFFFF Bu dünyaya ışınlanamazsınız.", source, 255, 0, 0, true)
+				playSoundFrontEnd(source, 4)
+			end, 1000, 1, source)
+		end
+	end
 end)
 
 function sendMessage(message)
