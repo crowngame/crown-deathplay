@@ -1,6 +1,6 @@
 addEvent("rankUpSound", true)
 addEventHandler("rankUpSound", root, function()
-	local sound = playSound("sounds/rank_up.mp3", false)
+	local sound = playSound("public/sounds/rank_up.mp3", false)
 	setSoundVolume(sound, 0.5)
 end)
 
