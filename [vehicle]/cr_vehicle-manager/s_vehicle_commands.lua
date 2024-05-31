@@ -898,8 +898,8 @@ function respawnCmdVehicle(thePlayer, commandName, id)
 					detachElements(theVehicle)
 					setElementCollisionsEnabled(theVehicle, true) -- Adams
 				end
-				setElementData(theVehicle, 'i:left')
-				setElementData(theVehicle, 'i:right')
+				removeElementData(theVehicle, 'i:left')
+				removeElementData(theVehicle, 'i:right')
 				local dbid = getElementData(theVehicle,"dbid")
 				if (dbid<0) then -- TEMP vehicle
 					fixVehicle(theVehicle) -- Can't really respawn this, so just repair it
