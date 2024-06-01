@@ -266,7 +266,7 @@ addCommandHandler("crownpass", function()
 								dxDrawText(value[1], screenX + 105, screenY + 147 + marginY, 0, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.h5)
 								dxDrawText((getMissionValueById(index) or 0) .. "/" .. value[2], 0, screenY + 147 + marginY, screenX + sizeX - 55, 0, tocolor(200, 200, 200), 1, fonts.UbuntuRegular.h5, "right")
 								
-								if getMissionValueById(index) == value[2] and not isRewardReceived(3, index) then
+								if getMissionValueById(index) >= value[2] and not isRewardReceived(3, index) then
 									dxDrawGradient(screenX + 20, screenY + 120 + marginY - 1, sizeX - 60, 1, 150, 150, 150, 255, false, true)
 									dxDrawGradient(screenX + 20, screenY + 120 + marginY, 1, 70, 150, 150, 150, 255, true, true)
 									dxDrawGradient(screenX + 20, screenY + 120 + marginY + 70, sizeX - 60, 1, 150, 150, 150, 255, false, false)
