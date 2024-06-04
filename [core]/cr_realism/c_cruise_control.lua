@@ -1,25 +1,4 @@
-local limitSpeed = { }
---[[
-table.insert(limitSpeed, 510, 60) -- Mountain bike
-table.insert(limitSpeed, 509, 55) -- Bike
-table.insert(limitSpeed, 481, 55) -- BMX
-table.insert(limitSpeed, 522, 160) -- NRG-500
-table.insert(limitSpeed, 468, 125) -- Sanchez
-table.insert(limitSpeed, 581, 140) -- BF-400
-table.insert(limitSpeed, 521, 150) -- FCR-900
-table.insert(limitSpeed, 461, 145) -- PCJ-600
-table.insert(limitSpeed, 463, 140) -- Freeway
-table.insert(limitSpeed, 586, 130) -- Wayfarer
-table.insert(limitSpeed, 448, 80) -- Pizzaboy
-table.insert(limitSpeed, 462, 90) -- Faggio
-table.insert(limitSpeed, 471, 120) -- Quadbike
-table.insert(limitSpeed, 523, 160) -- HPV1000
-table.insert(limitSpeed, 449, 45) -- HPV1000
-
-table.insert(limitSpeed, 414, 160) -- Mule
-table.insert(limitSpeed, 431, 160) -- Bus
-]]
-
+local limitSpeed = {}
 local ccEnabled = false
 local theVehicle = nil
 local targetSpeed = 0
