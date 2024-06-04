@@ -176,3 +176,21 @@ setTimer(function()
         end
     end
 end, 0, 0)
+
+local ped = createPed(240, -1989.80859375, 493.9208984375, 35.171875)
+
+function checkForSilentAim(weapon, ammo, ammoInClip, hitX, hitY, hitZ, hitElement)
+    local player = getLocalPlayer()
+    local target = ped
+    
+    if target and isElement(target) and getElementType(target) == "ped" then
+        local targetX, targetY, targetZ = getElementPosition(target)
+        
+        local distance = getDistanceBetweenPoints3D(hitX, hitY, hitZ, targetX, targetY, targetZ)
+        
+        if distance > 1.0 then
+            print("silent")
+        end
+    end
+end
+addEventHandler("onClientPlayerWeaponFire", localPlayer, checkForSilentAim)

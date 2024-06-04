@@ -237,4 +237,15 @@ function resetPass(thePlayer, commandName)
 		playSoundFrontEnd(thePlayer, 4)
 	end
 end
---addCommandHandler("resetpass", resetPass, false, false)
+addCommandHandler("resetpass", resetPass, false, false)
+
+function resetPassMissions(thePlayer, commandName)
+	if getElementData(thePlayer, "account:username") == "Farid" then
+		dbExec(mysql:getConnection(), "DELETE FROM pass_rewards WHERE reward_type = 3")
+		dbExec(mysql:getConnection(), "DELETE FROM pass_missions")
+	else
+		outputChatBox("[!]#FFFFFF Bu komutu kullanabilmek için gerekli yetkiye sahip değilsiniz.", thePlayer, 255, 0, 0, true)
+		playSoundFrontEnd(thePlayer, 4)
+	end
+end
+addCommandHandler("resetpassmissions", resetPassMissions, false, false)

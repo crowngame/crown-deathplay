@@ -1696,7 +1696,7 @@ addCommandHandler("changeusername", changeUsername, false, false)
 function changePassword(thePlayer, commandName, username, password, passwordAgain)
     if exports.cr_integration:isPlayerManager(thePlayer) then
         if username and password and passwordAgain then
-			if (string.len(password) >= 6) and (string.len(passwordAgain) >= 6) then
+			if #password >= 6 and #password <= 32 then
 				if password == passwordAgain then
 					dbQuery(function(qh)
 						local res, rows, err = dbPoll(qh, 0)

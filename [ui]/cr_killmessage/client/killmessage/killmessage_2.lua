@@ -1,4 +1,4 @@
-local icon1_centerX, icon1_topY = 0.9, 0.43
+local icon1_centerX, icon1_topY = 0.89, 0.43
 local icon_width, icon_height = 24, 24
 local icon_sideMargin, icon_bottomMargin = 10, 5
 local label_width, label_height = 200, 20

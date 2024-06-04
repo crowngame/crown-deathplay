@@ -3,7 +3,7 @@ local passwordTimer = {}
 
 function sifreDegistir(thePlayer, commandName, password, passwordAgain)
 	if password and passwordAgain then
-		if (string.len(password) >= 6) and (string.len(passwordAgain) >= 6) then
+		if string.len(password) < 6 or string.len(password) > 32 then
 			if password == passwordAgain then
 				if not isTimer(passwordTimer[thePlayer]) then
 					local id = getElementData(thePlayer, "account:id")

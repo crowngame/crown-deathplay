@@ -340,7 +340,8 @@ Webhooks = {
 	["turf"] = {
 		link = "https://discord.com/api/webhooks/1206660418416808106/YbxiaxTHmZqjEGYzig-pNnrQgj0tImnwdgF7SG1-r5Ll0MZvu_H5nKqgBTSfN9y3SPbe",
 		avatar = "https://i.imgur.com/ZX3kgXJ.png",
-		username = "Crown Deathplay"
+		username = "Crown Deathplay",
+		public = true
 	},
 }
 
@@ -361,11 +362,20 @@ WebhookClass = setmetatable({
     end,
 
     send = function(self, message)
+		local time = getRealTime()
+		local year = time.year + 1900
+		local month = time.month + 1
+		local day = time.monthday
+		local hour = time.hour
+		local minute = time.minute
+		local second = time.second
+		local currentDatetime = string.format("%04d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second)
+	
         local sendOptions = {
             connectionAttempts = 3,
             connectTimeout = 5000,
             formFields = {
-                content = message:gsub("@everyone", ""):gsub("@here", ""),
+                content = ((self.public or false) and "" or "[" .. currentDatetime .. "] ") .. message:gsub("@everyone", ""):gsub("@here", ""),
                 username = self.username,
                 avatar_url = self.avatar,
             }
