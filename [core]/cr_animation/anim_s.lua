@@ -34,7 +34,7 @@ function stopAnimation(thePlayer)
 	elseif getElementData(thePlayer, "irp.hookah.isUsing") then
 	else
 		if getElementData(thePlayer, "dead") == 0 then
-			triggerClientEvent (thePlayer, "stopAnimationFix", root)
+			triggerClientEvent(thePlayer, "stopAnimationFix", root)
 		end
 	end
 end

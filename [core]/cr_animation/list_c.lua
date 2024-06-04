@@ -372,7 +372,7 @@ function serverToAnim(block,number)
             local x1, y1, z1 = getElementPosition(v)
             local distance = math.floor(getDistanceBetweenPoints3D(x, y, z, x1, y1, z1))
             if distance <= 15 then 
-            	triggerServerEvent("give-->anim", localPlayer,  localPlayer, v, block,number)
+            	triggerServerEvent("give-->anim", localPlayer, localPlayer, v, block, number)
             end
         end
     end
