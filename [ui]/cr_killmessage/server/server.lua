@@ -3,7 +3,8 @@ addEventHandler("onPlayerWasted", root, function(ammo, killer, weapon, bodypart)
 		local score = getElementData(killer, "score") or 0
 		local kr, kg, kb = getPlayerNametagColor(killer)
 		local sr, sg, sb = getPlayerNametagColor(source)
-        triggerClientEvent(root, "killmessage1.sendKill", root, getPlayerName(killer), getPlayerName(source), weapon, score, { kr, kg, kb }, { sr, sg, sb })
+		local vip = getElementData(killer, "vip") or 0
+        triggerClientEvent(root, "killmessage1.sendKill", root, getPlayerName(killer), getPlayerName(source), weapon, score, { kr, kg, kb }, { sr, sg, sb }, vip)
     end
 end)
 

@@ -65,3 +65,11 @@ function interpolateBetween(x1, y1, z1, x2, y2, z2, progress, easing)
 
     return x, y, z
 end
+
+function getSmoothRGB(tickCount)
+    local period = 2000
+    local r = math.floor(127 * math.sin(2 * math.pi * (tickCount % period) / period) + 128)
+    local g = math.floor(127 * math.sin(2 * math.pi * (tickCount % period) / period + 2 * math.pi / 3) + 128)
+    local b = math.floor(127 * math.sin(2 * math.pi * (tickCount % period) / period + 4 * math.pi / 3) + 128)
+    return r, g, b
+end
