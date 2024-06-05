@@ -336,6 +336,12 @@ Webhooks = {
 		username = "Crown Deathplay"
 	},
 	
+	["dupontver-log"] = {
+		link = "https://discordapp.com/api/webhooks/1248036656779628564/op_dYE3th_lz_K9OI9aONbDISuGlBSRFIP-TShodvuxv2iQHiG6BhGiRVXZvlyZC11s-",
+		avatar = "https://i.imgur.com/ZX3kgXJ.png",
+		username = "Crown Deathplay"
+	},
+	
 	--> Public Webhooks
 	["turf"] = {
 		link = "https://discord.com/api/webhooks/1206660418416808106/YbxiaxTHmZqjEGYzig-pNnrQgj0tImnwdgF7SG1-r5Ll0MZvu_H5nKqgBTSfN9y3SPbe",
