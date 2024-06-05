@@ -53,7 +53,7 @@ setTimer(function()
 				
 				if isElement(ped) then
 					local boneX, boneY, boneZ = getPedBonePosition(ped, 2)
-					boneZ = boneZ - 0.3
+					boneZ = boneZ - 0.1
 					
 					local distance = math.sqrt((cameraX - boneX) ^ 2 + (cameraY - boneY) ^ 2 + (cameraZ - boneZ) ^ 2)
 					local alpha = distance >= 20 and math.max(0, 255 - (distance * 7)) or 255
@@ -64,7 +64,7 @@ setTimer(function()
 						if screenX and screenY then
 							local datas = getElementData(ped, "datas")
 							if datas then
-								dxDrawText((datas.charactername):gsub("_", " ") .. "\nÖldürme: " .. exports.cr_global:formatMoney(datas.kills) .. "\nÖlme: " .. exports.cr_global:formatMoney(datas.deaths) .. "\nK/D: " .. (string.format("%.2f", datas.kills / datas.deaths) or 0), screenX, 0, screenX, screenY, exports.cr_ui:rgba(theme.GRAY[100], alpha / 255), 1, fonts.UbuntuRegular.caption, "center", "bottom", false, true, false, true)
+								dxDrawText((datas.charactername):gsub("_", " ") .. "\nÖldürme: " .. datas.kills .. "\nÖlme: " .. datas.deaths, screenX, 0, screenX, screenY, exports.cr_ui:rgba(theme.GRAY[100], alpha / 255), 1, fonts.UbuntuRegular.caption, "center", "bottom", false, true, false, true)
 							end
 						end
 					end
