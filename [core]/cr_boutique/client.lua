@@ -5,7 +5,7 @@ local containerSizes = {
 local theme = exports.cr_ui:useTheme()
 local helperTextValue = ""
 
-local ped = createPed(240, 2008.873046875, -1408.41796875, 16.9921875, 180)
+local ped = createPed(299, 2016.529296875, -1408.419921875, 16.9921875, 180)
 setElementDimension(ped, 0)
 setElementInterior(ped, 0)
 setElementFrozen(ped, true)

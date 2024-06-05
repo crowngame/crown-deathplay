@@ -3,7 +3,6 @@ categories = {
 	{"Araç Özellikleri"},
 	{"Özel Araçlar"},
 	{"Silahlar"},
-	{"Etiketler (YAKINDA)"},
 }
 
 personalFeatures = {
@@ -32,12 +31,9 @@ vehicleFeatures = {
 
 privateVehicles = {
 	-- name, model, id, price
-	{"TOGG T10X", 404, 253, 600},
 	{"Mercedes Maybach", 516, 1023, 450},
 	{"Helikopter", 487, 413, 400},
-	{"Rolls Royce", 551, 305, 300},
 	{"Audi A7", 529, 301, 290},
-	{"Dodge Challenger SRT", 504, 1043, 250},
 	{"Cadillac Esclade", 400, 113, 250},
 	{"Mercedes-Benz G63", 479, 771, 250},
 	{"Volkswagen Passat", 540, 628, 230},
@@ -45,8 +41,7 @@ privateVehicles = {
 	{"BMW M4", 412, 526, 220},
 	{"Nissan GTR", 474, 203, 200},
 	{"Mercedes AMG GTR", 602, 520, 200},
-	{"BMW i8", 527, 666, 140},
-	{"Tofaş Doğan SLX", 561, 994, 100},
+	{"BMW i8", 527, 666, 150},
 }
 
 privateWeapons = {

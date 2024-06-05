@@ -16,8 +16,8 @@ slot = {
         {"medium", 0.2, { {10, 1}, {12, 0.7}, {15, 0.6}, {20, 0.4}, {25, 0.3} }},
         {"high", 0.01, { {50, 1}, {75, 0.7}, {100, 0.6} }},
     },
-    multipliersvalue = 10, -- bu çarpan gelme zorluğu ne kadar arttırırsan o kadar az çarpan gelir
-    multipliersvaluefarm = 110, -- bu farmda çarpan gelme zorluğu ne kadar arttırırsan o kadar az çarpan gelir
+    multipliersvalue = 11, -- bu çarpan gelme zorluğu ne kadar arttırırsan o kadar az çarpan gelir
+    multipliersvaluefarm = 105, -- bu farmda çarpan gelme zorluğu ne kadar arttırırsan o kadar az çarpan gelir
     betindex = 1,
     bets = {10, 100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000},
     volume = true,

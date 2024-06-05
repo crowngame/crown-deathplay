@@ -330,7 +330,7 @@ Webhooks = {
 		username = "Crown Deathplay"
 	},
 	
-	["twitter-log"] = {
+	["darkweb-log"] = {
 		link = "https://discord.com/api/webhooks/1241281103575384124/9CClMJYRVZHhDXgXnBXJL6_hKOX7KZ2PVa1ctPxkY13WjFdkWslznNzXF6qRdIqq7vmG",
 		avatar = "https://i.imgur.com/ZX3kgXJ.png",
 		username = "Crown Deathplay"

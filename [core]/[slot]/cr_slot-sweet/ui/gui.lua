@@ -229,7 +229,7 @@ function drawBackground()
     dxDrawImage(cx + (145 * psx), cy + (65 * psy), 30 * psx, 30 * psy, ui.screen["volume"], 0, 0, 0, interactionColor(cx + (145 * psx), cy + (65 * psy), 30 * psx, 30 * psy, (not slot.volume and tocolor(225, 0, 0, 200) or tocolor(225, 225, 225, 200)), not slot.volume and tocolor(245, 0, 0, 225) or tocolor(245, 245, 245, 225), "volume"))
     dxDrawImage(cx + (190 * psx), cy + (30 * psy), 50 * psx, 50 * psy, ui.screen["info"], 0, 0, 0, interactionColor(cx + (190 * psy), cy + (30 * psy), 50 * psx, 50 * psy, tocolor(225, 225, 225, 200), tocolor(245, 245, 245, 225), "info"))
     dxDrawOutlineText("KREDİ", cx + (280 * psx), cy + (25 * psy), nil, nil, tocolor(246, 175, 49), 1, ui.fonts["bottom_1"], "left", "top")
-    dxDrawOutlineText(exports.cr_global:formatMoney(exports["slot_core"]:getSlotMoney()) .. ".00 CR", cx + (360 * psx), cy + (25 * psy), nil, nil, tocolor(255, 255, 255), 1, ui.fonts["bottom_1"], "left", "top")
+    dxDrawOutlineText(exports.cr_global:formatMoney(exports["cr_slot-core"]:getSlotMoney()) .. ".00 CR", cx + (360 * psx), cy + (25 * psy), nil, nil, tocolor(255, 255, 255), 1, ui.fonts["bottom_1"], "left", "top")
     dxDrawOutlineText("BAHİS", cx + (280 * psx), cy + (55 * psy), nil, nil, tocolor(246, 175, 49), 1, ui.fonts["bottom_1"], "left", "top")
     dxDrawOutlineText(exports.cr_global:formatMoney(slot.bets[slot.betindex]) .. ".00 CR", cx + (360 * psx), cy + (55 * psy), nil, nil, tocolor(255, 255, 255), 1, ui.fonts["bottom_1"], "left", "top")
 

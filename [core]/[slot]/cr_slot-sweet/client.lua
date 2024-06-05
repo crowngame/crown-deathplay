@@ -91,5 +91,5 @@ end
 addEventHandler("slot-sendsenario", root, getSenarioFromServer)
 
 function checkMoney(amount)
-    return exports["slot_core"]:getSlotMoney() >= amount
+    return exports["cr_slot-core"]:getSlotMoney() >= amount
 end

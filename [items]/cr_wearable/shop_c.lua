@@ -10,9 +10,7 @@ local selectedWearable = 0
 local shownWShop = false;
 local setPosition = false;
 
-
-local shopPed = createPed(240, 2008.171875, -1408.4169921875, 16.9921875)
-setElementRotation(shopPed, 0, 0, 180)
+local shopPed = createPed(82, 2015.826171875, -1408.4287109375, 16.9921875, 180)
 shopPed:setData("name", "Aksesuar Mağazası")
 shopPed:setData("nametag", true)
 shopPed.frozen = true

@@ -1,0 +1,139 @@
+<meta>
+    <script src="___generated___/bundle.lua" type="shared" cache="false" />
+    <script src="___generated___/checker.lua" type="client" cache="false" />
+    
+    <script src="settings.lua" type="client" cache="false" />
+    <script src="client.lua" type="client" cache="false" />
+    <script src="panel.lua" type="client" cache="false" />
+    <script src="server.lua" type="server" />
+    
+    <export function="getMods" type="client" />
+    
+    <!-- MODLU ARAÇLAR -->
+    <file src="files/400.txd" model="400" download="false" isim="Cadillac Escalade" />
+    <file src="files/400.dff" model="400" download="false" isim="Cadillac Escalade" />
+    
+    <file src="files/529.txd" model="529" download="false" isim="Audi A7" />
+    <file src="files/529.dff" model="529" download="false" isim="Audi A7" />
+    
+    <file src="files/540.txd" model="540" download="false" isim="Volkswagen Passat" />
+    <file src="files/540.dff" model="540" download="false" isim="Volkswagen Passat" />
+    
+    <file src="files/490.txd" model="490" download="false" isim="Land Rover Range Rover" />
+    <file src="files/490.dff" model="490" download="false" isim="Land Rover Range Rover" />
+    
+    <file src="files/412.txd" model="412" download="false" isim="BMW M4" />
+    <file src="files/412.dff" model="412" download="false" isim="BMW M4" />
+    
+    <file src="files/474.txd" model="474" download="false" isim="Nissan GTR" />
+    <file src="files/474.dff" model="474" download="false" isim="Nissan GTR" />
+    
+    <file src="files/602.txd" model="602" download="false" isim="Mercedes AMG GTR" />
+    <file src="files/602.dff" model="602" download="false" isim="Mercedes AMG GTR" />
+    
+    <file src="files/527.txd" model="527" download="false" isim="BMW i8" />
+    <file src="files/527.dff" model="527" download="false" isim="BMW i8" />
+    
+    <file src="files/516.txd" model="516" download="false" isim="Mercedes Maybach" />
+    <file src="files/516.dff" model="516" download="false" isim="Mercedes Maybach" />
+    
+    <file src="files/479.txd" model="479" download="false" isim="Mercedes-Benz G63" />
+    <file src="files/479.dff" model="479" download="false" isim="Mercedes-Benz G63" />
+    
+    <file src="files/579.txd" model="579" download="false" isim="Huntley" />
+    <file src="files/579.dff" model="579" download="false" isim="Huntley" />
+    
+    
+    <!-- LSPD SKİNLERİ -->
+    <file src="files/278.txd" model="278" download="false" isim="Skin #278" />
+    <file src="files/278.dff" model="278" download="false" isim="Skin #278" />
+    
+    <file src="files/279.txd" model="279" download="false" isim="Skin #279" />
+    <file src="files/279.dff" model="279" download="false" isim="Skin #278" />
+    
+    <file src="files/280.txd" model="280" download="false" isim="Skin #280" />
+    <file src="files/280.dff" model="280" download="false" isim="Skin #280" />
+    
+    <file src="files/281.txd" model="281" download="false" isim="Skin #281" />
+    <file src="files/281.dff" model="281" download="false" isim="Skin #281" />
+    
+    <file src="files/282.txd" model="282" download="false" isim="Skin #282" />
+    <file src="files/282.dff" model="282" download="false" isim="Skin #282" />
+    
+    <file src="files/283.txd" model="283" download="false" isim="Skin #283" />
+    <file src="files/283.dff" model="283" download="false" isim="Skin #283" />
+    
+    <file src="files/286.txd" model="286" download="false" isim="Skin #286" />
+    <file src="files/286.dff" model="286" download="false" isim="Skin #286" />
+    
+    <file src="files/287.txd" model="287" download="false" isim="Skin #287" />
+    <file src="files/287.dff" model="287" download="false" isim="Skin #287" />
+    
+    <file src="files/288.txd" model="288" download="false" isim="Skin #288" />
+    <file src="files/288.dff" model="288" download="false" isim="Skin #288" />
+    
+    <file src="files/290.txd" model="290" download="false" isim="Skin #290" />
+    <file src="files/290.dff" model="290" download="false" isim="Skin #290" />
+    
+    <file src="files/291.txd" model="291" download="false" isim="Skin #291" />
+    <file src="files/291.dff" model="291" download="false" isim="Skin #291" />
+    
+    <file src="files/297.txd" model="297" download="false" isim="Skin #297" />
+    <file src="files/297.dff" model="297" download="false" isim="Skin #297" />
+    
+    <file src="files/266.txd" model="266" download="false" isim="Skin #266" />
+    <file src="files/266.dff" model="266" download="false" isim="Skin #266" />
+    
+    <file src="files/265.txd" model="265" download="false" isim="Skin #265" />
+    <file src="files/265.dff" model="265" download="false" isim="Skin #265" />
+    
+    <file src="files/307.txd" model="307" download="false" isim="Skin #307" />
+    <file src="files/307.dff" model="307" download="false" isim="Skin #307" />
+    
+    <file src="files/284.txd" model="284" download="false" isim="Skin #284" />
+    <file src="files/284.dff" model="284" download="false" isim="Skin #284" />
+    
+    <file src="files/296.txd" model="296" download="false" isim="Skin #296" />
+    <file src="files/296.dff" model="296" download="false" isim="Skin #296" />    
+    
+	
+    <!-- SWAT ERKEK SKİNLERİ -->
+    <file src="files/301.txd" model="301" download="false" isim="Skin #301" />
+    <file src="files/301.dff" model="301" download="false" isim="Skin #301" />
+    
+    <file src="files/269.txd" model="269" download="false" isim="Skin #269" />
+    <file src="files/269.dff" model="269" download="false" isim="Skin #269" />
+    
+    <file src="files/268.txd" model="268" download="false" isim="Skin #268" />
+    <file src="files/268.dff" model="268" download="false" isim="Skin #268" />
+    
+    
+    <!-- SWAT KADIN SKİNLERİ -->
+    <file src="files/295.txd" model="295" download="false" isim="Skin #295" />
+    <file src="files/295.dff" model="295" download="false" isim="Skin #295" />
+    
+    <file src="files/274.txd" model="274" download="false" isim="Skin #274" />
+    <file src="files/274.dff" model="274" download="false" isim="Skin #274" />
+    
+    <file src="files/298.txd" model="298" download="false" isim="Skin #298" />
+    <file src="files/298.dff" model="298" download="false" isim="Skin #298" />
+    
+    
+    <!-- MAVI TAKIM SKİNLERİ -->
+    <file src="files/105.txd" model="105" download="false" isim="Skin #105" />
+    <file src="files/106.txd" model="106" download="false" isim="Skin #106" />
+    <file src="files/107.txd" model="107" download="false" isim="Skin #107" />
+    
+    
+    <!-- KIRMIZI TAKIM SKİNLERİ -->
+    <file src="files/144.txd" model="144" download="false" isim="Skin #144" />
+    <file src="files/144.dff" model="144" download="false" isim="Skin #144" />
+    
+    <file src="files/19.txd" model="19" download="false" isim="Skin #19" />
+    <file src="files/19.dff" model="19" download="false" isim="Skin #19" />
+    
+    <file src="files/67.txd" model="67" download="false" isim="Skin #67" />
+    <file src="files/67.dff" model="67" download="false" isim="Skin #67" />
+	
+    <min_mta_version server="1.5.6-9.18728" client="1.5.6-9.18728"></min_mta_version>
+</meta>
