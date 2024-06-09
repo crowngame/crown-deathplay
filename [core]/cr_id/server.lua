@@ -1,9 +1,4 @@
 local ids = {}
-local specialIDs = {
-	["56B4859AF5F99E75D05C601AE8BA6EA2"] = 0,
-	["6BCCD7D5858EFE85B62A46551D980C54"] = -1,
-	["6578C0F0AE53CC8AB00FC32511F4F5B3"] = -2,
-}
 
 addEventHandler("onPlayerJoin", root, function()
 	local slot
@@ -12,10 +7,6 @@ addEventHandler("onPlayerJoin", root, function()
 			slot = i
 			break
 		end
-	end
-	
-	if specialIDs[getPlayerSerial(source)] then
-		slot = specialIDs[getPlayerSerial(source)]
 	end
 	
 	ids[slot] = source
@@ -35,10 +26,6 @@ addEventHandler("onPlayerQuit", root, function(reason	)
 end)
 
 for key, value in ipairs(getElementsByType("player")) do
-	if specialIDs[getPlayerSerial(value)] then
-		key = specialIDs[getPlayerSerial(value)]
-	end
-	
 	ids[key] = value
 	setElementData(value, "playerid", key)
 	exports.cr_pool:allocateElement(value, key)
