@@ -27,7 +27,6 @@ local anims_list = {
 	['gang'] = {'custom/gang.ifp', false, {'gsign1', 'gsign1LH', 'gsign2', 'gsign2LH', 'gsign3', 'gsign3LH', 'gsign3', 'gsign4LH', 'gsign5', 'gsign5LH'}, price = 0, name= "Sokak Çete Animasyonları", engine = 0, disabled = 0},
 	['dance'] = {'custom/dance_1.ifp', false, {"Bbalbat_Idle_01", "Bbalbat_Idle_02", "crckdeth1", "crckdeth2", "crckdeth3", "crckdeth4", "crckidle1", "crckidle2", "crckidle3", "crckidle4"}, price = 10, name = "Özel Dans Animasyonları", engine = 0, disabled = 0},
 	['kissing'] = {'custom/kissing.ifp', false, {"BD_GF_Wave", "gfwave2", "GF_CarArgue_01", "GF_CarArgue_02", "GF_CarSpot", "GF_StreetArgue_01"}, price=0, name="Özel Animasyonlar II", engine=0, disabled=0},
-	['sex'] = {'custom/sex.ifp', false, {"SEX_1to2_P", "SEX_1to2_W", "SEX_1_Cum_P", "SEX_1_Cum_W", "SEX_1_Fail_P", "SEX_1_P", "SEX_1_W", "SEX_2to3_P", "SEX_2to3_W", "SEX_2_Fail_P", "SEX_2_Fail_W", "SEX_2_P", "SEX_2_W", "SEX_3to1_P", "SEX_3to1_W", "SEX_3_Fail_P", "SEX_3_Fail_W", "SEX_3_P", "SEX_3_W"}, price=0, name="Özel Animasyonlar III (+18)", engine=0, disabled=0},
 	['blowjob'] = {'custom/blowjob.ifp', false, {"BJ_Car_End_P", "BJ_Car_End_W", "BJ_Car_Loop_P", "BJ_Car_Loop_W", "BJ_Car_Start_P", "BJ_Car_Start_W", "BJ_Couch_End_P", "BJ_Couch_End_W", "BJ_Couch_Loop_P", "BJ_Couch_Loop_W", "BJ_Couch_Start_P", "BJ_Couch_Start_W", "BJ_Stand_Loop_P", "BJ_Stand_Loop_W", "BJ_Stand_Start_P", "BJ_Stand_Start_W"}, price=0, name="Özel Animasyonlar IV (+18)", engine=0, disabled=0},
 }
 
@@ -256,16 +255,6 @@ addCommandHandler("kissing", function(cmd, id, target)
 			end
 		end
 		executeCommandHandler("kissing" .. id)
-	end
-end)
-
-addCommandHandler("sex", function(cmd, id)
-	if not id then outputChatBox("KULLANIM: /sex [1-15]", 255, 194, 14) return end
-	local index = "sex"
-	local customtable = getElementData(localPlayer, "custom_animations") or {}
-	if getPedOccupiedVehicle(localPlayer) then return end
-	if customtable[index] or (tonumber(anims_list[index].price) == 0) then
-		executeCommandHandler("sex" .. id)
 	end
 end)
 
