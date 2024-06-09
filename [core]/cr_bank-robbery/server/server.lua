@@ -1,26 +1,14 @@
 players = {}
 collision = createColCuboid(2305.34765625, -17.6798828125, 25.7421875, 15.2, 18, 5)
-isRobberyStarted = false
+robberyStarted = false
 
 addEventHandler("onColShapeHit", collision, function(thePlayer, matchingDimension)
-	if not isRobberyStarted then
+	if not robberyStarted then
 		if getElementType(thePlayer) == "player" then
-			if #players == 0 then
-				local playerTeam = getPlayerTeam(thePlayer)
-				if playerTeam then
-					table.insert(players, thePlayer)
-					triggerClientEvent(root, "robbery.updatePlayers", root, players)
-				end
-			else
-				if #players ~= 0 and #players <= 5 then
-					local lastPlayer = players[1]
-					if lastPlayer and isElement(lastPlayer) then
-						if getPlayerTeam(lastPlayer) == getPlayerTeam(thePlayer) then
-							table.insert(players, thePlayer)
-							triggerClientEvent(root, "robbery.updatePlayers", root, players)
-						end
-					end
-				end
+			if #players >= 0 and #players <= 5 then
+				table.insert(players, thePlayer)
+				triggerClientEvent(root, "robbery.updatePlayers", root, players)
+				outputChatBox("[!]#FFFFFF Soygun bölgesine giriş yaptınız.", thePlayer, 0, 255, 0, true)
 			end
 		end
 	end
@@ -28,11 +16,12 @@ end)
 
 addEventHandler("onColShapeLeave", collision, function(thePlayer, matchingDimension)
 	if getElementType(thePlayer) == "player" then
-		if not isRobberyStarted then
+		if not robberyStarted then
 			for index, value in pairs(players) do
 				if value == thePlayer then
 					table.remove(players, index)
 					triggerClientEvent(root, "robbery.updatePlayers", root, players)
+					outputChatBox("[!]#FFFFFF Soygunu bölgesinden çıkış yaptınız.", value, 255, 0, 0, true)
 				end
 			end
 		else
@@ -44,7 +33,7 @@ addEventHandler("onColShapeLeave", collision, function(thePlayer, matchingDimens
 			end
 
 			if found then
-				isRobberyStarted = false
+				robberyStarted = false
 				triggerClientEvent(root, "robbery.stopRobbery", root)
 				
 				outputChatBox("#f73f3f[HABER]#FFFFFF Banka soygunu sona erdi.", root, 255, 255, 255, true)
@@ -65,31 +54,32 @@ end)
 
 addEvent("robbery.startRobbery", true)
 addEventHandler("robbery.startRobbery", root, function()
-	if not isRobberyStarted then
+	if not robberyStarted then
+		robberyStarted = true
 		triggerClientEvent(root, "robbery.startRobbery", root)
-		isRobberyStarted = true
 
 		outputChatBox("#f73f3f[HABER]#FFFFFF Bankanın alarmları çalmaya başladı.", root, 255, 255, 255, true)
 
-		for key, value in ipairs(players) do 
-			outputChatBox("[!]#FFFFFF Soygun başladı, polislere bildirim gitti!", value, 0, 255, 0, true)
-			outputChatBox(">>#FFFFFF Soygunu bitirmek için 250 saniye burada bekle ve asla dışarı çıkma.", value, 0, 0, 255, true)
+		for _, player in ipairs(players) do 
+			outputChatBox("[!]#FFFFFF Soygun başladı, polislere bildirim gitti!", player, 0, 255, 0, true)
+			outputChatBox(">>#FFFFFF Soygunu bitirmek için 200 saniye burada bekle ve asla dışarı çıkma.", player, 0, 0, 255, true)
 		end
 	end
 end)
 
 addEvent("robbery.finishRobbery", true)
 addEventHandler("robbery.finishRobbery", root, function()
-	if isRobberyStarted then
-		isRobberyStarted = false
+	if robberyStarted then
+		robberyStarted = false
 		triggerClientEvent(root, "robbery.stopRobbery", root)
 		
 		outputChatBox("#f73f3f[HABER]#FFFFFF Banka soygunu sona erdi.", root, 255, 255, 255, true)
 		
-		for key, value in ipairs(players) do
-			exports.cr_global:giveMoney(value, robberyMoney)
-			exports.cr_pass:addMissionValue(value, 7, 1)
-			outputChatBox("[!]#FFFFFF Başarıyla bankayı soydunuz ve $" .. exports.cr_global:formatMoney(robberyMoney) .. " miktar para kazandınız!", value, 0, 255, 0, true)
+		for _, player in ipairs(players) do
+			local robberyMoney = math.random(100000, 300000)
+			exports.cr_global:giveMoney(player, robberyMoney)
+			exports.cr_pass:addMissionValue(player, 7, 1)
+			outputChatBox("[!]#FFFFFF Başarıyla bankayı soydunuz ve $" .. exports.cr_global:formatMoney(robberyMoney) .. " miktar para kazandınız!", player, 0, 255, 0, true)
 		end
 
 		players = {}
@@ -97,7 +87,7 @@ addEventHandler("robbery.finishRobbery", root, function()
 end)
 
 addEventHandler("onPlayerQuit", root, function(quitType)
-	if isRobberyStarted then
+	if robberyStarted then
 		local found = false
 		for index, value in pairs(players) do
 			if value == source then
@@ -106,7 +96,7 @@ addEventHandler("onPlayerQuit", root, function(quitType)
 		end
 
 		if found then
-			isRobberyStarted = false
+			robberyStarted = false
 			triggerClientEvent(root, "robbery.stopRobbery", root)
 			
 			outputChatBox("#f73f3f[HABER]#FFFFFF Banka soygunu sona erdi.", root, 255, 255, 255, true)
@@ -122,7 +112,7 @@ addEventHandler("onPlayerQuit", root, function(quitType)
 end)
 
 addEventHandler("onPlayerWasted", root, function(ammo, attacker, weapon, bodypart)
-	if isRobberyStarted then
+	if robberyStarted then
 		local found = false
 		for index, value in pairs(players) do
 			if value == source then
@@ -131,7 +121,7 @@ addEventHandler("onPlayerWasted", root, function(ammo, attacker, weapon, bodypar
 		end
 
 		if found then
-			isRobberyStarted = false
+			robberyStarted = false
 			triggerClientEvent(root, "robbery.stopRobbery", root)
 			
 			outputChatBox("#f73f3f[HABER]#FFFFFF Banka soygunu sona erdi.", root, 255, 255, 255, true)

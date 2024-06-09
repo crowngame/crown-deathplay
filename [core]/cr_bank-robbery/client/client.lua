@@ -1,5 +1,5 @@
 players = {}
-isRobberyStarted = false
+robberyStarted = false
 
 alarmSound = nil
 counter = nil
@@ -10,29 +10,28 @@ setElementData(bankPed, "nametag", true)
 setElementData(bankPed, "name", "Marcus Williams")
 setElementFrozen(bankPed, true)
 
-function aimToBankPed()
-	if not isRobberyStarted then
+setTimer(function()
+	if not robberyStarted then
 		if isElement(bankPed) then
 		    if aimsAt(bankPed) then
 		    	if not openingTimer then
 			    	if #players >= 2 then
 				    	local policeCount = 0
-			    		for key, value in ipairs(getElementsByType("player")) do 
-							if getElementData(value, "faction") == 1 then
+			    		for _, player in ipairs(getElementsByType("player")) do 
+							if getElementData(player, "faction") == 1 then
 								policeCount = policeCount + 1
 							end
 						end
 						
 						if policeCount >= 3 then
-							local found = false
-							for index, value in pairs(players) do
-								if value == localPlayer then
-									found = true
+							local foundPlayer = false
+							for _, player in pairs(players) do
+								if player == localPlayer then
+									foundPlayer = true
 								end
 							end
 
-							if found then
-								isRobberyStarted = true
+							if foundPlayer then
 								triggerServerEvent("robbery.startRobbery", localPlayer)
 							end
 						else
@@ -50,8 +49,7 @@ function aimToBankPed()
 		    end
 		end
 	end
-end
-setTimer(aimToBankPed, 100, 0)
+end, 100, 0)
 
 function aimsSniper()
 	return getPedControlState(localPlayer, "aim_weapon") and (getPedWeapon(localPlayer) == 22 or getPedWeapon(localPlayer) == 23 or getPedWeapon(localPlayer) == 24 or getPedWeapon(localPlayer) == 25 or getPedWeapon(localPlayer) == 26 or getPedWeapon(localPlayer) == 27 or getPedWeapon(localPlayer) == 28 or getPedWeapon(localPlayer) == 29 or getPedWeapon(localPlayer) == 30 or getPedWeapon(localPlayer) == 31 or getPedWeapon(localPlayer) == 32 or getPedWeapon(localPlayer) == 33 or getPedWeapon(localPlayer) == 34)
@@ -63,9 +61,9 @@ end
 
 addEvent("robbery.startRobbery", true)
 addEventHandler("robbery.startRobbery", root, function()
-	if not isRobberyStarted then
+	if not robberyStarted then
 		setPedAnimation(bankPed, "ped", "handsup", -1, false, true, false)
-		isRobberyStarted = true
+		robberyStarted = true
 
 		alarmSound = playSound3D("public/sounds/alarm.wav", 2312.9345703125, -8.390625, 26.7421875, true)
 		setSoundMaxDistance(alarmSound, 150)
@@ -84,8 +82,8 @@ end)
 
 addEvent("robbery.stopRobbery", true)
 addEventHandler("robbery.stopRobbery", root, function()
-	if isRobberyStarted then
-		isRobberyStarted = false
+	if robberyStarted then
+		robberyStarted = false
 		setPedAnimation(bankPed)
 		destroyElement(alarmSound)
 		
